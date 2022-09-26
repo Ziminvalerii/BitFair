@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="PixelCyr.ttf">
+            <string>PixelCyr-Normal</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsView" customModule="BitFair" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelButton" destination="ZRc-W3-2Yk" id="HFD-fZ-rs9"/>
+                <outlet property="restartButton" destination="9c2-CL-vVY" id="NbV-Db-mHI"/>
+                <outlet property="shopButton" destination="xBO-nb-sPo" id="zXG-Ep-Beq"/>
+                <outlet property="soundOffButton" destination="umg-mm-cUz" id="Kly-1L-oFs"/>
+                <outlet property="soundOnButton" destination="UxL-wJ-B0K" id="SVQ-uO-e26"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="584" height="357"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBO-nb-sPo">
+                    <rect key="frame" x="171" y="199" width="242" height="63"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="242" id="RDV-ro-ebK"/>
+                        <constraint firstAttribute="height" constant="63" id="Whh-6K-qLE"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="0.0"/>
+                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="shopButtonTexture2"/>
+                    <connections>
+                        <action selector="shopButtonPressed:" destination="-1" eventType="touchUpInside" id="O4K-by-6fN"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9c2-CL-vVY">
+                    <rect key="frame" x="171" y="120" width="242" height="63"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="63" id="To2-ge-ckC"/>
+                        <constraint firstAttribute="width" constant="242" id="VIq-Jy-WqD"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="0.0"/>
+                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="restartButtonTexture"/>
+                    <connections>
+                        <action selector="restartButtonPressed:" destination="-1" eventType="touchUpInside" id="BeF-fy-xAZ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UxL-wJ-B0K">
+                    <rect key="frame" x="362" y="16" width="90" height="74"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="6nf-Lk-D4Z"/>
+                        <constraint firstAttribute="width" secondItem="UxL-wJ-B0K" secondAttribute="height" multiplier="174:143" id="m77-gm-0Rc"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="0.0"/>
+                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="soundOnTexture"/>
+                    <connections>
+                        <action selector="soundOnButtonPressed:" destination="-1" eventType="touchUpInside" id="rQ9-d4-VEg"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="umg-mm-cUz">
+                    <rect key="frame" x="132" y="16" width="90" height="74"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="6Z9-5z-vxm"/>
+                        <constraint firstAttribute="width" secondItem="umg-mm-cUz" secondAttribute="height" multiplier="174:143" id="S6c-5M-Bfr"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="0.0"/>
+                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="soundOfTexture"/>
+                    <connections>
+                        <action selector="soundOffButtonPressed:" destination="-1" eventType="touchUpInside" id="NR5-0W-goO"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZRc-W3-2Yk">
+                    <rect key="frame" x="171" y="278" width="242" height="63"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="63" id="2eJ-cp-cze"/>
+                        <constraint firstAttribute="width" constant="242" id="hix-ZC-t4S"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="242" id="kn1-8r-axw"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="0.0"/>
+                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="buttonTexture"/>
+                    <connections>
+                        <action selector="shopButtonPressed:" destination="-1" eventType="touchUpInside" id="ECE-bx-at3"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjd-7G-aXw">
+                    <rect key="frame" x="246.5" y="288" width="91" height="43"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="91" id="JOk-Ks-Yly"/>
+                        <constraint firstAttribute="height" constant="43" id="eel-yU-twI"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="PixelCyr-Normal" family="Pixel Cyr" pointSize="38"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="ZRc-W3-2Yk" secondAttribute="bottom" constant="16" id="35q-f0-qlQ"/>
+                <constraint firstItem="umg-mm-cUz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="35w-PC-xbD"/>
+                <constraint firstItem="xBO-nb-sPo" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="DzA-u0-nqv"/>
+                <constraint firstItem="9c2-CL-vVY" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Lul-By-AIV"/>
+                <constraint firstItem="UxL-wJ-B0K" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="Qg9-o5-b9J"/>
+                <constraint firstItem="ZRc-W3-2Yk" firstAttribute="top" secondItem="xBO-nb-sPo" secondAttribute="bottom" constant="16" id="VKt-6L-cfO"/>
+                <constraint firstItem="mjd-7G-aXw" firstAttribute="centerY" secondItem="ZRc-W3-2Yk" secondAttribute="centerY" id="Xeb-lZ-WcB"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="UxL-wJ-B0K" secondAttribute="trailing" constant="132" id="gDs-MH-Jg7"/>
+                <constraint firstItem="xBO-nb-sPo" firstAttribute="top" secondItem="9c2-CL-vVY" secondAttribute="bottom" constant="16" id="ktK-mU-vjs"/>
+                <constraint firstItem="umg-mm-cUz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="132" id="qp8-ph-XXY"/>
+                <constraint firstItem="mjd-7G-aXw" firstAttribute="centerX" secondItem="ZRc-W3-2Yk" secondAttribute="centerX" id="t4I-LJ-c3v"/>
+                <constraint firstItem="ZRc-W3-2Yk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="vmY-CE-yUU"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="269.56521739130437" y="-435.60267857142856"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="buttonTexture" width="320" height="90"/>
+        <image name="restartButtonTexture" width="320" height="90"/>
+        <image name="shopButtonTexture2" width="320" height="90"/>
+        <image name="soundOfTexture" width="120" height="108"/>
+        <image name="soundOnTexture" width="120" height="108"/>
+    </resources>
+</document>

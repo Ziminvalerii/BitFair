@@ -1,0 +1,6 @@
+framework module Pods_BitFairTests {
+  umbrella header "Pods-BitFairTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
