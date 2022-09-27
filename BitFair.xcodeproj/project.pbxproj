@@ -1218,7 +1218,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9BD44B69BD;
+				DEVELOPMENT_TEAM = 8DT35KQUY9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BitFair/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1234,7 +1234,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.geniuslineltd.bitfair;
+				PRODUCT_BUNDLE_IDENTIFIER = com.grapaltd.bitfair;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = bitfairProvisioningProfile;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1252,7 +1252,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9BD44B69BD;
+				DEVELOPMENT_TEAM = 8DT35KQUY9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BitFair/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1268,7 +1268,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.geniuslineltd.bitfair;
+				PRODUCT_BUNDLE_IDENTIFIER = com.grapaltd.bitfair;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = bitfairProvisioningProfile;
 				SWIFT_EMIT_LOC_STRINGS = YES;

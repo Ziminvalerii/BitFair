@@ -25,9 +25,9 @@ class GameViewController: BaseViewController<GamePresenterProtocol>, GameViewPro
                 view.presentScene(scene)
             }
             view.ignoresSiblingOrder = true
-            view.showsFPS = true
-            view.showsNodeCount = true
-            view.showsPhysics = true
+//            view.showsFPS = true
+//            view.showsNodeCount = true
+//            view.showsPhysics = true
         }
     }
 

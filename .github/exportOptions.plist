@@ -10,7 +10,7 @@
 	<true/>
 	<key>provisioningProfiles</key>
 	<dict>
-		<key>com.geniuslineltd.bitfair</key>
+		<key>com.grapaltd.bitfair</key>
 		<string>bitfairProvisioningProfile</string>
 	</dict>
 </dict>
