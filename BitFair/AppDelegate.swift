@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let router = Router(navigationController: rootNavVC, builder: builder)
         router.start()
         window?.rootViewController = rootNavVC
-        
+        playBackgroundMusic()
         return true
     }
 

@@ -25,13 +25,13 @@ protocol CharacterProtocol: SKSpriteNode, Dependable, Mortal {
 extension CharacterProtocol {
     
     func setUpPhysics() {
-        self.physicsBody = SKPhysicsBody(texture: self.texture!, size: self.size)
-        //    self.physicsBody = SKPhysicsBody(rectangleOf: self.size)
+        //self.physicsBody = SKPhysicsBody(texture: self.texture!, size: self.size)
+        self.physicsBody = SKPhysicsBody(rectangleOf: self.size)
         self.physicsBody?.isDynamic = true
         self.physicsBody?.allowsRotation = false
         self.physicsBody?.categoryBitMask = PhysicsBitMask.player.bitMask
         self.physicsBody?.collisionBitMask = PhysicsBitMask.ground.bitMask | PhysicsBitMask.enemy.bitMask | PhysicsBitMask.bonusGround.bitMask
-        self.physicsBody?.contactTestBitMask = PhysicsBitMask.coint.bitMask | PhysicsBitMask.enemy.bitMask | PhysicsBitMask.enemyWeapon.bitMask | PhysicsBitMask.ground.bitMask | PhysicsBitMask.starts.bitMask
+        self.physicsBody?.contactTestBitMask = PhysicsBitMask.coint.bitMask | PhysicsBitMask.enemy.bitMask | PhysicsBitMask.enemyWeapon.bitMask | PhysicsBitMask.ground.bitMask | PhysicsBitMask.starts.bitMask | PhysicsBitMask.bonusGround.bitMask
     }
     
     func moveAutomatic(groundNode: SKNode, contactPoint: CGPoint) {
@@ -83,9 +83,6 @@ extension CharacterProtocol {
     
     func receiveMessage<T>(with arguments: T) {
         if let arguments = arguments as? ButtonState {
-//            if let action = self.action(forKey: "follow ground") {
-//                self.removeAction(forKey: "follow ground")
-//            }
             self.position.x += mySpeed*CGFloat(arguments.rawValue)//speed
             
         }  else if let arguments = arguments as? String {
@@ -96,9 +93,22 @@ extension CharacterProtocol {
             }
             if let cameraNode = self.scene?.camera {
                 if let backgroundNode = scene?.childNode(withName: "background") as? BackgroundNode {
-                    if self.position.x > 0 && backgroundNode.currentCusrsor < scene!.size.width * CGFloat(backgroundNode.backGroundCount) {
-                        cameraNode.position.x = self.position.x
+                    if self.parent == self.scene {
+                        if self.position.x > 0 && backgroundNode.currentCusrsor < scene!.size.width * CGFloat(backgroundNode.backGroundCount) {
+                            cameraNode.position.x = self.position.x
+                        }
+                        print("Hero position: \(self.position)")
+                        print("Ground position: \(self.parent!.position)")
+                    } else {
+                        if self.parent?.name == "tip ground node" {
+                            cameraNode.position.x = self.parent!.position.x - scene!.size.width/2 + self.position.x
+//                            if self.position.y > self.parent!.frame.size.height/2 + self.size.height/2 {
+//                                self.move(toParent: scene!)
+//                            }
+                            
+                        }
                     }
+                   
                 }
             }
         }

@@ -12,7 +12,8 @@ class CoinsNode: SKSpriteNode {
     convenience init() {
         self.init(imageNamed: "coins")
         self.zPosition = 3
-        self.physicsBody = SKPhysicsBody(texture: self.texture!, size: self.size)
+        self.physicsBody = SKPhysicsBody(circleOfRadius: self.size.width/2)
+        //self.physicsBody = SKPhysicsBody(texture: self.texture!, size: self.size)
         self.physicsBody?.isDynamic = false
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.categoryBitMask = PhysicsBitMask.coint.bitMask

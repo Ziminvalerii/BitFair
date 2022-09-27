@@ -76,22 +76,13 @@ class GameSceneManager : NSObject, GameSceneManagerProtocol {
         super.init()
         scene.backgroundColor = .white
         preparePhysicsForWold(for: scene)
-        
-        configureBackgroundAudio()
-        
     }
     
     func preparePhysicsForWold(for scene: SKScene) {
         scene.physicsWorld.gravity = gravity
         scene.physicsWorld.contactDelegate = self
     }
-    
-    func configureBackgroundAudio() {
-        if !UserDefaultsValues.soundOff {
-            let playCointsSound = SKAction.playSoundFileNamed("backgroundSound.wav", waitForCompletion: true)
-            self.scene?.run(SKAction.repeatForever(playCointsSound), withKey: "play background audio")
-        }
-    }
+
     
 }
 

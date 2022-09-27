@@ -25,7 +25,7 @@ class LevelManager {
         for i in 0..<currentLevel.tipPoints.count {
             let tipGround = TipGround(state: currentLevel.tipPoints[i].0)
             tipGround.position = currentLevel.tipPoints[i].1
-            tipGround.name = i.description
+          //  tipGround.name = i.description
             tipGrounds.append(tipGround)
         }
         return tipGrounds
@@ -115,15 +115,18 @@ class LevelManager {
     }
     
     func createObstacle() -> SKSpriteNode {
+      
         let obstacleNode = SKSpriteNode(imageNamed: "obstacle")
         obstacleNode.size = NodesSize.obstacle.size
         obstacleNode.zPosition = 3
-        obstacleNode.physicsBody = SKPhysicsBody(texture: obstacleNode.texture!, size: obstacleNode.size)
+        obstacleNode.physicsBody = SKPhysicsBody(rectangleOf: obstacleNode.size)
+     //   obstacleNode.physicsBody = SKPhysicsBody(texture: obstacleNode.texture!, size: obstacleNode.size)
         obstacleNode.physicsBody?.isDynamic = false
         obstacleNode.physicsBody?.affectedByGravity = false
         obstacleNode.physicsBody?.categoryBitMask = PhysicsBitMask.ground.bitMask
-        obstacleNode.physicsBody?.collisionBitMask = PhysicsBitMask.player.bitMask
+        obstacleNode.physicsBody?.collisionBitMask = PhysicsBitMask.player.bitMask 
         obstacleNode.physicsBody?.contactTestBitMask = PhysicsBitMask.enemyWeapon.bitMask | PhysicsBitMask.weapon.bitMask
+        obstacleNode.physicsBody?.usesPreciseCollisionDetection = true
         return obstacleNode
     }
     
@@ -300,29 +303,29 @@ enum Levels {
     var obstaclePoints: [CGPoint] {
         switch self {
         case .first(let sceneSize):
-            return [CGPoint(x: sceneSize.width*1.3, y: 50 + NodesSize.obstacle.size.height),
-                    CGPoint(x: sceneSize.width*2.1, y: 50 + NodesSize.obstacle.size.height),
-                    CGPoint(x: sceneSize.width*2.3, y: 50 + NodesSize.obstacle.size.height),
-                    CGPoint(x: sceneSize.width*3.6, y: 50 + NodesSize.obstacle.size.height),
-                    CGPoint(x: sceneSize.width*4.2, y: 50 + NodesSize.obstacle.size.height),
-                    CGPoint(x: sceneSize.width*5.3, y: 50 + NodesSize.obstacle.size.height)
+            return [CGPoint(x: sceneSize.width*1.3, y: 95 + NodesSize.obstacle.size.height/2),
+                    CGPoint(x: sceneSize.width*2.1, y: 95 + NodesSize.obstacle.size.height/2),
+                    CGPoint(x: sceneSize.width*2.3, y: 95 + NodesSize.obstacle.size.height/2),
+                    CGPoint(x: sceneSize.width*3.6, y: 95 + NodesSize.obstacle.size.height/2),
+                    CGPoint(x: sceneSize.width*4.2, y: 95 + NodesSize.obstacle.size.height/2),
+                    CGPoint(x: sceneSize.width*5.3, y: 95 + NodesSize.obstacle.size.height/2)
             ]
         case .second(let sceneSize):
-            return [CGPoint(x: sceneSize.width*2.2, y: 50 + NodesSize.obstacle.size.height),
-                    CGPoint(x: sceneSize.width*3.6, y: 50 + NodesSize.obstacle.size.height),
-                    CGPoint(x: sceneSize.width*3.8, y: 50 + NodesSize.obstacle.size.height),
-                    CGPoint(x: sceneSize.width*4.9, y: 50 + NodesSize.obstacle.size.height),
-                    CGPoint(x: sceneSize.width*5.2, y: 50 + NodesSize.obstacle.size.height),
+            return [CGPoint(x: sceneSize.width*2.2, y: 95 + NodesSize.obstacle.size.height/2),
+                    CGPoint(x: sceneSize.width*3.6, y: 95 + NodesSize.obstacle.size.height/2),
+                    CGPoint(x: sceneSize.width*3.8, y: 95 + NodesSize.obstacle.size.height/2),
+                    CGPoint(x: sceneSize.width*4.9, y: 95 + NodesSize.obstacle.size.height/2),
+                    CGPoint(x: sceneSize.width*5.2, y: 95 + NodesSize.obstacle.size.height/2),
             ]
         case .third(let sceneSize):
-            return [CGPoint(x: sceneSize.width*0.9, y: 50 + NodesSize.obstacle.size.height),
-                    CGPoint(x: sceneSize.width*1.9, y: 50 + NodesSize.obstacle.size.height),
-                    CGPoint(x: sceneSize.width*2.9, y: 50 + NodesSize.obstacle.size.height),
-                    CGPoint(x: sceneSize.width*3.0, y: 50 + NodesSize.obstacle.size.height),
-                    CGPoint(x: sceneSize.width*3.1, y: 50 + NodesSize.obstacle.size.height),
-                    CGPoint(x: sceneSize.width*4.2, y: 50 + NodesSize.obstacle.size.height),
-                    CGPoint(x: sceneSize.width*5.3, y: 50 + NodesSize.obstacle.size.height),
-                    CGPoint(x: sceneSize.width*6.6, y: 50 + NodesSize.obstacle.size.height)
+            return [CGPoint(x: sceneSize.width*0.9, y: 95 + NodesSize.obstacle.size.height/2),
+                    CGPoint(x: sceneSize.width*1.9, y: 95 + NodesSize.obstacle.size.height/2),
+                    CGPoint(x: sceneSize.width*2.9, y: 95 + NodesSize.obstacle.size.height/2),
+                    CGPoint(x: sceneSize.width*3.0, y: 95 + NodesSize.obstacle.size.height/2),
+                    CGPoint(x: sceneSize.width*3.1, y: 95 + NodesSize.obstacle.size.height/2),
+                    CGPoint(x: sceneSize.width*4.2, y: 95 + NodesSize.obstacle.size.height/2),
+                    CGPoint(x: sceneSize.width*5.3, y: 95 + NodesSize.obstacle.size.height/2),
+                    CGPoint(x: sceneSize.width*6.6, y: 95 + NodesSize.obstacle.size.height/2)
             ]
         case .fourth(_):
             return [CGPoint]()
@@ -430,25 +433,25 @@ enum Levels {
         switch self {
         case .first(let sceneSize):
             return [
-                (.coins(2), CGPoint(x: 0.6*sceneSize.width, y: 132 + NodesSize.simpleEnemy.size.height/2)),
-                (.no, CGPoint(x: 1.4*sceneSize.width, y: 132 + NodesSize.simpleEnemy.size.height/2)),
-                (.stars(1), CGPoint(x: 2.2*sceneSize.width, y: 132 + NodesSize.simpleEnemy.size.height/2)),
-                (.coins(4), CGPoint(x: 3.8*sceneSize.width, y: 132 + NodesSize.simpleEnemy.size.height/2))
+                (.coins(2), CGPoint(x: 0.6*sceneSize.width, y: 102 + NodesSize.simpleEnemy.size.height/2)),
+                (.no, CGPoint(x: 1.4*sceneSize.width, y: 102 + NodesSize.simpleEnemy.size.height/2)),
+                (.stars(1), CGPoint(x: 2.2*sceneSize.width, y: 102 + NodesSize.simpleEnemy.size.height/2)),
+                (.coins(4), CGPoint(x: 3.8*sceneSize.width, y: 102 + NodesSize.simpleEnemy.size.height/2))
             ]
         case .second(let sceneSize):
-            return [(.no, CGPoint(x: 2.0*sceneSize.width, y: 132 + NodesSize.simpleEnemy.size.height/2)),
-                    (.coins(4), CGPoint(x: 3.7*sceneSize.width, y: 132 + NodesSize.simpleEnemy.size.height/2)),
-                    (.coins(4), CGPoint(x: 5.0*sceneSize.width, y: 132 + NodesSize.simpleEnemy.size.height/2)),
-                    (.no, CGPoint(x: 5.5*sceneSize.width, y: 132 + NodesSize.simpleEnemy.size.height/2)),
-                    (.no, CGPoint(x: 5.5*sceneSize.width, y: 132 + NodesSize.simpleEnemy.size.height/2)),
+            return [(.no, CGPoint(x: 2.0*sceneSize.width, y: 102 + NodesSize.simpleEnemy.size.height/2)),
+                    (.coins(4), CGPoint(x: 3.7*sceneSize.width, y: 102 + NodesSize.simpleEnemy.size.height/2)),
+                    (.coins(4), CGPoint(x: 5.0*sceneSize.width, y: 102 + NodesSize.simpleEnemy.size.height/2)),
+                    (.no, CGPoint(x: 5.5*sceneSize.width, y: 102 + NodesSize.simpleEnemy.size.height/2)),
+                    (.no, CGPoint(x: 5.5*sceneSize.width, y: 102 + NodesSize.simpleEnemy.size.height/2)),
                     (.coins(6), CGPoint(x: 1.4*sceneSize.width, y: sceneSize.height*0.4 + NodesSize.simpleEnemy.size.height/2 + 24)),
                     (.coins(6), CGPoint(x: 2.5*sceneSize.width, y: sceneSize.height*0.3 + NodesSize.simpleEnemy.size.height/2 + 24)),
             ]
         case .third(let sceneSize):
             return [(.coins(2), CGPoint(x: 0.8*sceneSize.width, y: sceneSize.height/4 + NodesSize.simpleEnemy.size.height/2 + 24)),
-                    (.no, CGPoint(x: 2.1*sceneSize.width, y: 132 + NodesSize.simpleEnemy.size.height/2)),
-                    (.no, CGPoint(x: 3.3*sceneSize.width, y: 132 + NodesSize.simpleEnemy.size.height/2)),
-                    (.coins(4), CGPoint(x: 5.5*sceneSize.width, y: 132 + NodesSize.simpleEnemy.size.height/2)),
+                    (.no, CGPoint(x: 2.1*sceneSize.width, y: 102 + NodesSize.simpleEnemy.size.height/2)),
+                    (.no, CGPoint(x: 3.3*sceneSize.width, y: 102 + NodesSize.simpleEnemy.size.height/2)),
+                    (.coins(4), CGPoint(x: 5.5*sceneSize.width, y: 102 + NodesSize.simpleEnemy.size.height/2)),
             ]
         case .fourth(_):
             return [(EnemyKillReward, CGPoint)]()

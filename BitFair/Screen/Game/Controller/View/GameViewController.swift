@@ -10,9 +10,9 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: BaseViewController<GamePresenterProtocol>, GameViewProtocol {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
             if let scene = SKScene(fileNamed: "GameScene") {
@@ -24,11 +24,10 @@ class GameViewController: BaseViewController<GamePresenterProtocol>, GameViewPro
                 // Present the scene
                 view.presentScene(scene)
             }
-            
             view.ignoresSiblingOrder = true
-            
             view.showsFPS = true
             view.showsNodeCount = true
+            view.showsPhysics = true
         }
     }
 
@@ -42,7 +41,7 @@ class GameViewController: BaseViewController<GamePresenterProtocol>, GameViewPro
     func shopButtonPressed() {
         if let view = self.view as? SKView {
             if let scene = view.scene as? GameScene {
-                scene.switchState(state: .goToShop)
+                scene.switchState(state: .goToMap)
             }
         }
     }
@@ -79,4 +78,7 @@ class GameViewController: BaseViewController<GamePresenterProtocol>, GameViewPro
             }
         }
     }
+    
+   
+    
 }

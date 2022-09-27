@@ -18,7 +18,6 @@ import UIKit
     var showRestart: Bool = false {
         didSet {
             restartButton.isHidden = !showRestart
-            shopButton.isHidden = showRestart
         }
     }
     
@@ -35,9 +34,11 @@ import UIKit
     
     @IBAction func soundOffButtonPressed(_ sender: Any) {
         UserDefaultsValues.soundOff = true
+        stopPlaying()
     }
     @IBAction func soundOnButtonPressed(_ sender: Any) {
         UserDefaultsValues.soundOff = false
+        playBackgroundMusic()
     }
     @IBAction func restartButtonPressed(_ sender: Any) {
     }

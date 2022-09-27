@@ -60,10 +60,10 @@ extension GameSceneManager : SKPhysicsContactDelegate {
             enemy = contact.bodyB.node
         }
         if let enemy = enemy as? EnemyProtocol, let player = player as? CharacterProtocol {
-            let superheroPos = player.position.y - player.size.height/2
+            let superheroPos = enemy.position.y - scene!.size.height/2 + enemy.size.height/2//player.position.y - player.size.height/2
             print("enemyHead2 \(superheroPos)")
             print("contact \(contact.contactPoint)")
-            let range = superheroPos - 10 ... superheroPos + 20
+            let range = superheroPos - 10 ... superheroPos + 10
             if Date().timeIntervalSince1970 - contactInterval > 1 {
                 if range.contains(contact.contactPoint.y) {
                     let hitAction = SKAction.playSoundFileNamed("hitSound.wav", waitForCompletion: false)
@@ -192,15 +192,23 @@ extension GameSceneManager : SKPhysicsContactDelegate {
             player = contact.bodyB.node
         }
         if let player = player as? CharacterProtocol, let ground = ground as? TipGround {
-          //  player.physicsBody?.pinned = true
-//            if ground.state == .leftRight {
-//            }
+            if ground.state == .leftRight || ground.state == .upDown {
+                player.move(toParent: ground)
+            } else {
+                player.move(toParent: scene)
+            }
+        } else {
+            player?.move(toParent: scene)
         }
     }
     
     private func handleContactBtwPlayerStars(_ contact: SKPhysicsContact) {
         guard let scene = scene else {return}
+        let starCollectAction = SKAction.playSoundFileNamed("starCollect.mp3", waitForCompletion: false)
         if Date().timeIntervalSince1970 - contactInterval > 0.15 {
+            if !UserDefaultsValues.soundOff {
+                self.scene?.run(starCollectAction)
+            }
             if contact.bodyA.categoryBitMask == PhysicsBitMask.starts.bitMask {
                 contact.bodyA.node?.removeFromParent()
                 starsCount += 1

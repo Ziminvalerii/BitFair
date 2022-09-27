@@ -24,9 +24,9 @@ enum BasicCharacterType {
     var size: CGSize {
         switch self {
         case .simple:
-            return CGSize(width: 76, height: 132)
+            return CGSize(width: 65, height: 105)
         case .upgraded:
-            return CGSize(width: 90, height: 120)
+            return CGSize(width: 70, height: 100)
         }
     }
     
@@ -44,7 +44,7 @@ class BasicCharacter: SKSpriteNode, CharacterProtocol  {
     //var hp:Int = 3
     var hp: Int = 3
     var mySpeed: CGFloat = 4.0
-    var jump: CGFloat = 85
+    var jump: CGFloat = 135
     var numberOfShoots: Int = 2
     var shootCount: Int = 0
     var walkTextures: [SKTexture] = [SKTexture]()

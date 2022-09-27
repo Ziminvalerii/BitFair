@@ -17,7 +17,6 @@ class EnemyWeaponNode: SKSpriteNode, EnemyWeaponProtocol {
         self.zPosition = 11
         //self.size = CGSize(width: 40, height: 40)
         addPhysics()
-        setUpBitMasks()
         self.name = "batWeapone"
     }
  

@@ -29,7 +29,8 @@ class SimpleEnemy: SKSpriteNode, EnemyProtocol {
 
     
     func setUpPhysics() {
-        self.physicsBody = SKPhysicsBody(texture: self.texture!, size: self.size)
+        self.physicsBody = SKPhysicsBody(rectangleOf: self.size)
+        //self.physicsBody = SKPhysicsBody(texture: self.texture!, size: self.size)
         self.physicsBody?.isDynamic = true
         self.physicsBody?.allowsRotation = false
         setUpBitMasks()

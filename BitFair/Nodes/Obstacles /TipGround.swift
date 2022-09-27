@@ -21,16 +21,19 @@ class TipGround: SKSpriteNode{
         self.init(imageNamed: "tipGround")
         self.size = NodesSize.tipGround.size
         self.zPosition = 2
-        self.physicsBody = SKPhysicsBody(texture: self.texture!, size: self.size)
+        self.physicsBody = SKPhysicsBody(rectangleOf: self.size)
+      //  self.physicsBody = SKPhysicsBody(texture: self.texture!, size: self.size)
         self.physicsBody?.isDynamic = false
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.categoryBitMask = PhysicsBitMask.ground.bitMask
-        self.physicsBody?.collisionBitMask = PhysicsBitMask.player.bitMask
+        self.physicsBody?.collisionBitMask = PhysicsBitMask.player.bitMask 
         if state == .leftRight {
             self.physicsBody?.contactTestBitMask = PhysicsBitMask.player.bitMask | PhysicsBitMask.enemyWeapon.bitMask | PhysicsBitMask.weapon.bitMask
         } else {
             self.physicsBody?.contactTestBitMask = PhysicsBitMask.enemyWeapon.bitMask | PhysicsBitMask.weapon.bitMask
         }
+     //   self.physicsBody?.usesPreciseCollisionDetection = true
+        self.name = "tip ground node"
         self.state = state
     }
     

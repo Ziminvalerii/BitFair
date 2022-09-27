@@ -12,7 +12,8 @@ class LevelGroundNode: SKSpriteNode {
         let node = SKSpriteNode(imageNamed: "levelGround")
         node.size = NodesSize.levelGround.size
         node.zPosition = 5
-        node.physicsBody = SKPhysicsBody(texture: node.texture!, size: node.size)
+        node.physicsBody = SKPhysicsBody(rectangleOf: node.size)
+       // node.physicsBody = SKPhysicsBody(texture: node.texture!, size: node.size)
         node.physicsBody?.isDynamic = false
         node.physicsBody?.affectedByGravity = false
         node.physicsBody?.categoryBitMask = PhysicsBitMask.ground.bitMask

@@ -45,8 +45,9 @@ extension SettingsButtonNode: ButtonType {
     func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?, in scene: SKScene?) {        guard let scene = scene else {return}
         if containsTouches(touches: touches, scene: scene, nodeName: "settings") {
         delegate.switchState(state: .goToSettings)
+            playSound(scene)
         }
-        playSound(scene)
+       
     }
 }
 

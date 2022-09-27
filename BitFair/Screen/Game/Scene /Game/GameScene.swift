@@ -29,8 +29,6 @@ class GameScene: SKScene {
         gameManager.contactManager = self
         self.camera = gameManager.cameraNode
         self.stateMachine.enter(StartState.self)
-       
-        
     }
     
     override func didMove(to view: SKView) {
@@ -90,7 +88,7 @@ extension GameScene: Dependable {
         } else if state == GameStates.watchAd {
             self.stateMachine.enter(RescurentState.self)
             parentViewController?.showRewardedAd(completion: {
-                self.gameManager.configureBackgroundAudio()
+                playBackgroundMusic()
                 self.stateMachine.enter(PlayingState.self)
             })
         } else if state == GameStates.rescurentWithCoints {
@@ -108,7 +106,7 @@ extension GameScene: Dependable {
         if let argumets = argumets as? String {
             if argumets == "Watch add" {
                 parentViewController?.showRewardedAd {
-                    self.gameManager.configureBackgroundAudio()
+                  playBackgroundMusic()
                     completion()
                 }
             }

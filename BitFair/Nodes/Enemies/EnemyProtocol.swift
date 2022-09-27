@@ -23,13 +23,6 @@ protocol EnemyProtocol: SKSpriteNode {
 }
 
 extension EnemyProtocol {
-//    func setUpAction() {
-//        let moveBack = SKAction.moveTo(x: self.position.x - 10, duration: 1)
-//        let moveNext = SKAction.moveTo(x: self.position.x + 10, duration: 1)
-//        let sequence = SKAction.sequence([moveBack, moveNext, moveBack])
-//        self.run(SKAction.repeatForever(sequence))
-//        
-//    }
     func setUpBitMasks() {
         self.physicsBody?.categoryBitMask = PhysicsBitMask.enemy.bitMask
         self.physicsBody?.collisionBitMask = PhysicsBitMask.ground.bitMask | PhysicsBitMask.player.bitMask
@@ -54,4 +47,5 @@ extension EnemyProtocol {
             return
         }
     }
+
 }

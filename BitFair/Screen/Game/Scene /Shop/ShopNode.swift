@@ -201,7 +201,7 @@ extension ShopNode: ButtonType {
             
         } else if containsTouches(touches: touches, scene: scene, nodeNames: ["watch ad", "watch ad label"]) {
             if let scene = scene as? GameScene {
-                scene.removeAction(forKey: "play background audio")
+                stopPlaying()
             self.delegate.recieveMessage(with: "Watch add") {
                 self.getBuyProduct(model: self.model[self.currentIndex])
             }
@@ -229,7 +229,7 @@ extension ShopNode: ButtonType {
             configureButtons(model: model[currentIndex])
             playSound(scene)
             
-        } else if containsTouches(touches: touches, scene: scene, nodeName: "back") {
+        } else if containsTouches(touches: touches, scene: scene, nodeNames: ["back", "back label"]) {
             playSound(scene)
             self.delegate.switchState(state: .start)
         }

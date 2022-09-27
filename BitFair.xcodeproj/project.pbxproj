@@ -104,6 +104,8 @@
 		D1EE4FE528D203B100622C5D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EE4FE428D203B100622C5D /* BaseViewController.swift */; };
 		D1EE4FE728D2049600622C5D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EE4FE628D2049600622C5D /* Router.swift */; };
 		D1EE4FE928D2049F00622C5D /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EE4FE828D2049F00622C5D /* Builder.swift */; };
+		D1EF985E28E2369000B42EEC /* starCollect.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D1EF985D28E2369000B42EEC /* starCollect.mp3 */; };
+		D1EF986028E23DC500B42EEC /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EF985F28E23DC500B42EEC /* MusicPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -229,6 +231,8 @@
 		D1EE4FE428D203B100622C5D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		D1EE4FE628D2049600622C5D /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		D1EE4FE828D2049F00622C5D /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
+		D1EF985D28E2369000B42EEC /* starCollect.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = starCollect.mp3; sourceTree = "<group>"; };
+		D1EF985F28E23DC500B42EEC /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
 		D65B53AE21657E71F219F59D /* Pods_BitFair_BitFairUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitFair_BitFairUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3CB802DADD18A8085A0E3DC /* Pods-BitFairTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitFairTests.release.xcconfig"; path = "Target Support Files/Pods-BitFairTests/Pods-BitFairTests.release.xcconfig"; sourceTree = "<group>"; };
 		EF038C42B10C4BD49921211F /* Pods-BitFair-BitFairUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitFair-BitFairUITests.release.xcconfig"; path = "Target Support Files/Pods-BitFair-BitFairUITests/Pods-BitFair-BitFairUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -357,6 +361,7 @@
 				D13ED64428DB0877009495C8 /* PurchaseManager.swift */,
 				D13ED64628DB0B36009495C8 /* PurchaseModel.swift */,
 				D1DCDC9828DC531100D25DAA /* UserDefaultsValues.swift */,
+				D1EF985F28E23DC500B42EEC /* MusicPlayer.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -387,6 +392,7 @@
 				D1DCDC9328DBB02600D25DAA /* PixelCyr.ttf */,
 				D15BBABA28D45A99009503A4 /* backgroundSound.wav */,
 				D1B2AAEC28D4689100963D8E /* hitSound.wav */,
+				D1EF985D28E2369000B42EEC /* starCollect.mp3 */,
 				D1B2AAF028D485E400963D8E /* painSound.mp3 */,
 				D1B2AAF228D4887700963D8E /* pressSound.wav */,
 				D15BBAB628D452D7009503A4 /* getCoinsSound.wav */,
@@ -559,6 +565,7 @@
 				D13ED64C28DB2FAF009495C8 /* Game */,
 				D1DBDBD528E1AF4900AB343D /* Level Map */,
 				D1DBDBDC28E1B1A400AB343D /* Shop */,
+				D1EC234528D0AF2500486EA6 /* Factories */,
 			);
 			path = "Scene ";
 			sourceTree = "<group>";
@@ -636,6 +643,13 @@
 				D1B2AAEE28D469CC00963D8E /* HealthPointNode.swift */,
 			);
 			path = Nodes;
+			sourceTree = "<group>";
+		};
+		D1EC234528D0AF2500486EA6 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 		D1EE4FD128D1F6C500622C5D /* SettingView */ = {
@@ -813,6 +827,7 @@
 				D1EC230428D0AD0000486EA6 /* Assets.xcassets in Resources */,
 				D1EE4FD528D1F6E300622C5D /* SettingsView.xib in Resources */,
 				D1B2AAF128D485E400963D8E /* painSound.mp3 in Resources */,
+				D1EF985E28E2369000B42EEC /* starCollect.mp3 in Resources */,
 				D1EC230728D0AD0000486EA6 /* LaunchScreen.storyboard in Resources */,
 				D1B2AAF328D4887700963D8E /* pressSound.wav in Resources */,
 				D15BBAB728D452D7009503A4 /* getCoinsSound.wav in Resources */,
@@ -1003,6 +1018,7 @@
 				D1DBDBDB28E1B17300AB343D /* MapOverlay+Touches.swift in Sources */,
 				D1EC234F28D0CDD000486EA6 /* ShopButton.swift in Sources */,
 				D1B2AAFC28D4A60E00963D8E /* ReplyButton.swift in Sources */,
+				D1EF986028E23DC500B42EEC /* MusicPlayer.swift in Sources */,
 				D13ED65628DB5F33009495C8 /* NewbieKnight.swift in Sources */,
 				D1DCDCA228DC784C00D25DAA /* InstructionModel.swift in Sources */,
 				D13ED64B28DB17A8009495C8 /* CoinsNode.swift in Sources */,

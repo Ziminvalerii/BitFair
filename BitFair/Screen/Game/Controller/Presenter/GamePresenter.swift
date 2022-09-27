@@ -13,6 +13,7 @@ protocol GameViewProtocol:AnyObject {
     func shopButtonPressed()
     func restartButtonPressed()
     func cancelButtonPressed()
+
 }
 
 protocol GamePresenterProtocol:AnyObject {
@@ -66,7 +67,7 @@ class GamePresenter:GamePresenterProtocol {
         view?.shopButtonPressed()
         
     }
-    
+   
     func getSettingsView()->SettingsView {
         let settingsView = router.builder.resolveSettingsView()
         return settingsView

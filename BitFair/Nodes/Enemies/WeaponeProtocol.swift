@@ -15,10 +15,12 @@ protocol WeaponeProtocol: SKSpriteNode {
 
 extension WeaponeProtocol {
     func addPhysics() {
-        self.physicsBody = SKPhysicsBody(texture: self.texture!, size: self.size)
+        self.physicsBody = SKPhysicsBody(circleOfRadius: self.size.width/2)
+       // self.physicsBody = SKPhysicsBody(texture: self.texture!, size: self.size)
         self.physicsBody?.isDynamic = true
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.allowsRotation = false
+        self.physicsBody?.usesPreciseCollisionDetection = true
         setUpBitMasks()
     }
 }
@@ -39,7 +41,6 @@ extension HeroWeaponProtocol {
     func setUpBitMasks() {
         self.physicsBody?.categoryBitMask = PhysicsBitMask.weapon.bitMask
         self.physicsBody?.contactTestBitMask = PhysicsBitMask.enemy.bitMask | PhysicsBitMask.ground.bitMask
-        //self.physicsBody?.contactTestBitMask =
     }
 }
 
@@ -63,7 +64,7 @@ extension EnemyWeaponProtocol {
     func setUpBitMasks() {
         self.physicsBody?.categoryBitMask = PhysicsBitMask.enemyWeapon.bitMask
         self.physicsBody?.contactTestBitMask = PhysicsBitMask.player.bitMask | PhysicsBitMask.ground.bitMask
-         
+        self.physicsBody?.collisionBitMask = PhysicsBitMask.ground.bitMask
     }
     
 }

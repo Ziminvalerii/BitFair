@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,10 +33,11 @@
                         <constraint firstAttribute="width" constant="242" id="RDV-ro-ebK"/>
                         <constraint firstAttribute="height" constant="63" id="Whh-6K-qLE"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="0.0"/>
                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" image="shopButtonTexture2"/>
+                    <state key="normal" title="Levels Map" image="buttonTexture">
+                        <color key="titleColor" name="backgroundColor"/>
+                    </state>
                     <connections>
                         <action selector="shopButtonPressed:" destination="-1" eventType="touchUpInside" id="O4K-by-6fN"/>
                     </connections>
@@ -107,6 +109,12 @@
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level Map" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLL-ry-COj">
+                    <rect key="frame" x="191" y="209" width="202.5" height="43"/>
+                    <fontDescription key="fontDescription" name="PixelCyr-Normal" family="Pixel Cyr" pointSize="38"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -114,8 +122,10 @@
                 <constraint firstAttribute="bottom" secondItem="ZRc-W3-2Yk" secondAttribute="bottom" constant="16" id="35q-f0-qlQ"/>
                 <constraint firstItem="umg-mm-cUz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="35w-PC-xbD"/>
                 <constraint firstItem="xBO-nb-sPo" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="DzA-u0-nqv"/>
+                <constraint firstItem="nLL-ry-COj" firstAttribute="centerX" secondItem="xBO-nb-sPo" secondAttribute="centerX" id="Fk7-ef-xDK"/>
                 <constraint firstItem="9c2-CL-vVY" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Lul-By-AIV"/>
                 <constraint firstItem="UxL-wJ-B0K" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="Qg9-o5-b9J"/>
+                <constraint firstItem="nLL-ry-COj" firstAttribute="centerY" secondItem="xBO-nb-sPo" secondAttribute="centerY" id="TvV-pQ-jXb"/>
                 <constraint firstItem="ZRc-W3-2Yk" firstAttribute="top" secondItem="xBO-nb-sPo" secondAttribute="bottom" constant="16" id="VKt-6L-cfO"/>
                 <constraint firstItem="mjd-7G-aXw" firstAttribute="centerY" secondItem="ZRc-W3-2Yk" secondAttribute="centerY" id="Xeb-lZ-WcB"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="UxL-wJ-B0K" secondAttribute="trailing" constant="132" id="gDs-MH-Jg7"/>
@@ -131,8 +141,10 @@
     <resources>
         <image name="buttonTexture" width="320" height="90"/>
         <image name="restartButtonTexture" width="320" height="90"/>
-        <image name="shopButtonTexture2" width="320" height="90"/>
         <image name="soundOfTexture" width="120" height="108"/>
         <image name="soundOnTexture" width="120" height="108"/>
+        <namedColor name="backgroundColor">
+            <color red="0.90499997138977051" green="0.84600001573562622" blue="0.66100001335144043" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
     </resources>
 </document>

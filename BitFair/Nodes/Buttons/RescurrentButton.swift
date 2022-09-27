@@ -60,7 +60,7 @@ extension RescurrrentButton: ButtonType {
         guard let scene = scene else {return}
         if containsTouches(touches: touches, scene: scene, nodeName: "rescurent node \(type == .watchAdd ? "with add" : "with coins")") {
             if type == .watchAdd {
-                scene.removeAction(forKey: "play background audio")
+                stopPlaying()
                 delegate.switchState(state: .watchAd)
             } else {
                 delegate.switchState(state: .rescurentWithCoints)

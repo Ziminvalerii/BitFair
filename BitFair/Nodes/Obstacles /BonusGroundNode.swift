@@ -32,8 +32,9 @@ class BonusGroundNode: SKSpriteNode {
         bonusGround.zPosition = 2
         bonusGround.physicsBody = SKPhysicsBody(rectangleOf: NodesSize.bonusGround.size)
         bonusGround.physicsBody?.isDynamic = false
-        bonusGround.physicsBody?.categoryBitMask = PhysicsBitMask.bonusGround.bitMask
+        bonusGround.physicsBody?.categoryBitMask = PhysicsBitMask.bonusGround.bitMask 
         bonusGround.physicsBody?.contactTestBitMask = PhysicsBitMask.player.bitMask | PhysicsBitMask.enemyWeapon.bitMask | PhysicsBitMask.weapon.bitMask
+        bonusGround.physicsBody?.collisionBitMask = PhysicsBitMask.player.bitMask
         return bonusGround
     }
     

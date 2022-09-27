@@ -13,7 +13,8 @@ class StarNode: SKSpriteNode {
         self.init(imageNamed: "stars")
         self.zPosition = 2
         self.size = NodesSize.coint.size
-        self.physicsBody = SKPhysicsBody(texture: self.texture!, size: self.size)
+        self.physicsBody = SKPhysicsBody(rectangleOf: self.size)
+       // self.physicsBody = SKPhysicsBody(texture: self.texture!, size: self.size)
         self.physicsBody?.isDynamic = false
         self.physicsBody?.affectedByGravity = false
         self.physicsBody?.categoryBitMask = PhysicsBitMask.starts.bitMask

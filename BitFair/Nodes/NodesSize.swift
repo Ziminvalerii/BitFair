@@ -38,7 +38,7 @@ enum NodesSize {
         case .coint:
             return CGSize(width: 40, height: 40)
         case .obstacle:
-            return CGSize(width: 80, height: 93)
+            return CGSize(width: 50, height: 70)
         case .heart:
             return CGSize(width: 30, height: 30)
         case .bonusGround:
@@ -56,7 +56,7 @@ enum NodesSize {
         case .playButton:
             return CGSize(width: 278, height: 60)
         case .levelGround:
-            return CGSize(width: 270, height: 150)
+            return CGSize(width: 180, height: 50)
         case .cointsLabel:
             return CGSize(width: 250, height: 50)
         }

@@ -61,14 +61,15 @@ class BackgroundNode: SKSpriteNode {
         physicBody.affectedByGravity = false
         physicBody.categoryBitMask = PhysicsBitMask.ground.bitMask
         physicBody.collisionBitMask = PhysicsBitMask.player.bitMask
+        physicBody.contactTestBitMask = PhysicsBitMask.player.bitMask 
         return physicBody
     }
     
     private func createBackgroundNode(at sceneSize: CGSize, index: Int)->SKSpriteNode {
         let background = SKSpriteNode(imageNamed: "background")
         background.size.width =  sceneSize.width
-        background.size.height = sceneSize.height*0.85
-        background.position = CGPoint(x: sceneSize.width/2 + sceneSize.width*CGFloat((i)), y: sceneSize.height*0.575)
+        background.size.height = sceneSize.height
+        background.position = CGPoint(x: sceneSize.width/2 + sceneSize.width*CGFloat((i)), y: sceneSize.height*0.5)
         background.zPosition = 1
         return background
     }
@@ -76,7 +77,7 @@ class BackgroundNode: SKSpriteNode {
     private func createGround(at sceneSize: CGSize, index: Int)->SKSpriteNode {
         let ground = SKSpriteNode(imageNamed: "ground")
         ground.size = CGSize(width: sceneSize.width, height: 100)
-        ground.position = CGPoint(x: sceneSize.width/2 + sceneSize.width*CGFloat((i)), y: (ground.size.height/2 + 30))
+        ground.position = CGPoint(x: sceneSize.width/2 + sceneSize.width*CGFloat((i)), y: (ground.size.height/2))
         ground.zPosition = 2
         ground.physicsBody = setUpPhysics(texture: ground.texture!, size: ground.size)
         ground.name = "ground"
