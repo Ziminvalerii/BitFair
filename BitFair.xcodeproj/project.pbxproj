@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D97E49BBA167289CC8264D9 /* Pods_BitFair.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D6746C31EDE6CA4824DA4E /* Pods_BitFair.framework */; };
-		8EE00E833302F37D4D7DC187 /* Pods_BitFair_BitFairUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D65B53AE21657E71F219F59D /* Pods_BitFair_BitFairUITests.framework */; };
-		CEBF5F9C7DE9FA11BC9C823C /* Pods_BitFairTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 441D6E29C6BE1892B7CCFA13 /* Pods_BitFairTests.framework */; };
+		190CB051BB220DF5F074D525 /* Pods_BitFairTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99917D026D18313C9F8B438 /* Pods_BitFairTests.framework */; };
+		35255820923EC42E30D77F23 /* Pods_BitFair.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A613E048A1B5E7C1C784791 /* Pods_BitFair.framework */; };
+		97F707CD3C4262401B9046CF /* Pods_BitFair_BitFairUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F2F92B8FD5893CF57CD63BA /* Pods_BitFair_BitFairUITests.framework */; };
 		D115D37528D8967100DC0E88 /* BonusGroundNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D115D37428D8967000DC0E88 /* BonusGroundNode.swift */; };
 		D115D37728D8B03200DC0E88 /* EnemyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D115D37628D8B03200DC0E88 /* EnemyProtocol.swift */; };
 		D115D37928D8B1D600DC0E88 /* BatEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D115D37828D8B1D600DC0E88 /* BatEnemy.swift */; };
@@ -126,12 +126,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04D6746C31EDE6CA4824DA4E /* Pods_BitFair.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitFair.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		26187D870C4C5D2CBED9259B /* Pods-BitFair.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitFair.release.xcconfig"; path = "Target Support Files/Pods-BitFair/Pods-BitFair.release.xcconfig"; sourceTree = "<group>"; };
-		437C7CCD740DF04186202E76 /* Pods-BitFair-BitFairUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitFair-BitFairUITests.debug.xcconfig"; path = "Target Support Files/Pods-BitFair-BitFairUITests/Pods-BitFair-BitFairUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		441D6E29C6BE1892B7CCFA13 /* Pods_BitFairTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitFairTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		87B6173768AED7488BB1F064 /* Pods-BitFairTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitFairTests.debug.xcconfig"; path = "Target Support Files/Pods-BitFairTests/Pods-BitFairTests.debug.xcconfig"; sourceTree = "<group>"; };
-		B0636A3258FF5F662FE42E61 /* Pods-BitFair.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitFair.debug.xcconfig"; path = "Target Support Files/Pods-BitFair/Pods-BitFair.debug.xcconfig"; sourceTree = "<group>"; };
+		0842BCD040037A0045F7F5C3 /* Pods-BitFairTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitFairTests.debug.xcconfig"; path = "Target Support Files/Pods-BitFairTests/Pods-BitFairTests.debug.xcconfig"; sourceTree = "<group>"; };
+		099F0E30F833FA6818AC5AAF /* Pods-BitFair-BitFairUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitFair-BitFairUITests.release.xcconfig"; path = "Target Support Files/Pods-BitFair-BitFairUITests/Pods-BitFair-BitFairUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1C76935E462C2417FE9DA8B1 /* Pods-BitFair.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitFair.release.xcconfig"; path = "Target Support Files/Pods-BitFair/Pods-BitFair.release.xcconfig"; sourceTree = "<group>"; };
+		1F2F92B8FD5893CF57CD63BA /* Pods_BitFair_BitFairUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitFair_BitFairUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A613E048A1B5E7C1C784791 /* Pods_BitFair.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitFair.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55207B295A10542E50EE7F6B /* Pods-BitFair-BitFairUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitFair-BitFairUITests.debug.xcconfig"; path = "Target Support Files/Pods-BitFair-BitFairUITests/Pods-BitFair-BitFairUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B664B207136CA1257E7AA180 /* Pods-BitFair.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitFair.debug.xcconfig"; path = "Target Support Files/Pods-BitFair/Pods-BitFair.debug.xcconfig"; sourceTree = "<group>"; };
+		D109F01E7E0889381F349F3D /* Pods-BitFairTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitFairTests.release.xcconfig"; path = "Target Support Files/Pods-BitFairTests/Pods-BitFairTests.release.xcconfig"; sourceTree = "<group>"; };
 		D115D37428D8967000DC0E88 /* BonusGroundNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusGroundNode.swift; sourceTree = "<group>"; };
 		D115D37628D8B03200DC0E88 /* EnemyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyProtocol.swift; sourceTree = "<group>"; };
 		D115D37828D8B1D600DC0E88 /* BatEnemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatEnemy.swift; sourceTree = "<group>"; };
@@ -233,9 +235,7 @@
 		D1EE4FE828D2049F00622C5D /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		D1EF985D28E2369000B42EEC /* starCollect.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = starCollect.mp3; sourceTree = "<group>"; };
 		D1EF985F28E23DC500B42EEC /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
-		D65B53AE21657E71F219F59D /* Pods_BitFair_BitFairUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitFair_BitFairUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3CB802DADD18A8085A0E3DC /* Pods-BitFairTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitFairTests.release.xcconfig"; path = "Target Support Files/Pods-BitFairTests/Pods-BitFairTests.release.xcconfig"; sourceTree = "<group>"; };
-		EF038C42B10C4BD49921211F /* Pods-BitFair-BitFairUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitFair-BitFairUITests.release.xcconfig"; path = "Target Support Files/Pods-BitFair-BitFairUITests/Pods-BitFair-BitFairUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E99917D026D18313C9F8B438 /* Pods_BitFairTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitFairTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,7 +243,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D97E49BBA167289CC8264D9 /* Pods_BitFair.framework in Frameworks */,
+				35255820923EC42E30D77F23 /* Pods_BitFair.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,7 +251,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEBF5F9C7DE9FA11BC9C823C /* Pods_BitFairTests.framework in Frameworks */,
+				190CB051BB220DF5F074D525 /* Pods_BitFairTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +259,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EE00E833302F37D4D7DC187 /* Pods_BitFair_BitFairUITests.framework in Frameworks */,
+				97F707CD3C4262401B9046CF /* Pods_BitFair_BitFairUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,24 +269,14 @@
 		9D5CF6696EF8F9CFD80E3571 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B0636A3258FF5F662FE42E61 /* Pods-BitFair.debug.xcconfig */,
-				26187D870C4C5D2CBED9259B /* Pods-BitFair.release.xcconfig */,
-				437C7CCD740DF04186202E76 /* Pods-BitFair-BitFairUITests.debug.xcconfig */,
-				EF038C42B10C4BD49921211F /* Pods-BitFair-BitFairUITests.release.xcconfig */,
-				87B6173768AED7488BB1F064 /* Pods-BitFairTests.debug.xcconfig */,
-				E3CB802DADD18A8085A0E3DC /* Pods-BitFairTests.release.xcconfig */,
+				B664B207136CA1257E7AA180 /* Pods-BitFair.debug.xcconfig */,
+				1C76935E462C2417FE9DA8B1 /* Pods-BitFair.release.xcconfig */,
+				55207B295A10542E50EE7F6B /* Pods-BitFair-BitFairUITests.debug.xcconfig */,
+				099F0E30F833FA6818AC5AAF /* Pods-BitFair-BitFairUITests.release.xcconfig */,
+				0842BCD040037A0045F7F5C3 /* Pods-BitFairTests.debug.xcconfig */,
+				D109F01E7E0889381F349F3D /* Pods-BitFairTests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		AF76300A3E84B18986A97D1D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				04D6746C31EDE6CA4824DA4E /* Pods_BitFair.framework */,
-				D65B53AE21657E71F219F59D /* Pods_BitFair_BitFairUITests.framework */,
-				441D6E29C6BE1892B7CCFA13 /* Pods_BitFairTests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D115D37C28D8B8C700DC0E88 /* Weapone */ = {
@@ -478,7 +468,7 @@
 				D1EC231928D0AD0000486EA6 /* BitFairUITests */,
 				D1EC22F428D0ACFB00486EA6 /* Products */,
 				9D5CF6696EF8F9CFD80E3571 /* Pods */,
-				AF76300A3E84B18986A97D1D /* Frameworks */,
+				DF1CB3282E960AF99C8EDED0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -711,6 +701,16 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		DF1CB3282E960AF99C8EDED0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A613E048A1B5E7C1C784791 /* Pods_BitFair.framework */,
+				1F2F92B8FD5893CF57CD63BA /* Pods_BitFair_BitFairUITests.framework */,
+				E99917D026D18313C9F8B438 /* Pods_BitFairTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -718,11 +718,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1EC232028D0AD0000486EA6 /* Build configuration list for PBXNativeTarget "BitFair" */;
 			buildPhases = (
-				EF2E1E25D7D138DBACEEC5E1 /* [CP] Check Pods Manifest.lock */,
+				A05A4292EF2F98AD71C8465F /* [CP] Check Pods Manifest.lock */,
 				D1EC22EF28D0ACFB00486EA6 /* Sources */,
 				D1EC22F028D0ACFB00486EA6 /* Frameworks */,
 				D1EC22F128D0ACFB00486EA6 /* Resources */,
-				10BB86DB551D1C2589DAD4F3 /* [CP] Embed Pods Frameworks */,
+				E7D2838D318B770F5D2CE9B9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -737,7 +737,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1EC232328D0AD0000486EA6 /* Build configuration list for PBXNativeTarget "BitFairTests" */;
 			buildPhases = (
-				C67223FA3E7DEC2AF97E8A1A /* [CP] Check Pods Manifest.lock */,
+				F0BA21027E3DA819C999A3DD /* [CP] Check Pods Manifest.lock */,
 				D1EC230828D0AD0000486EA6 /* Sources */,
 				D1EC230928D0AD0000486EA6 /* Frameworks */,
 				D1EC230A28D0AD0000486EA6 /* Resources */,
@@ -756,11 +756,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1EC232628D0AD0000486EA6 /* Build configuration list for PBXNativeTarget "BitFairUITests" */;
 			buildPhases = (
-				8A1569CF3CA94DFE7DAFD77B /* [CP] Check Pods Manifest.lock */,
+				F9494A37895CF16C000D190D /* [CP] Check Pods Manifest.lock */,
 				D1EC231228D0AD0000486EA6 /* Sources */,
 				D1EC231328D0AD0000486EA6 /* Frameworks */,
 				D1EC231428D0AD0000486EA6 /* Resources */,
-				5F4029FCF2B62397FA67594F /* [CP] Embed Pods Frameworks */,
+				1D41DDE02E4BBDAA3BB7E852 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -853,24 +853,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		10BB86DB551D1C2589DAD4F3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BitFair/Pods-BitFair-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BitFair/Pods-BitFair-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BitFair/Pods-BitFair-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5F4029FCF2B62397FA67594F /* [CP] Embed Pods Frameworks */ = {
+		1D41DDE02E4BBDAA3BB7E852 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -887,7 +870,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BitFair-BitFairUITests/Pods-BitFair-BitFairUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8A1569CF3CA94DFE7DAFD77B /* [CP] Check Pods Manifest.lock */ = {
+		A05A4292EF2F98AD71C8465F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -902,14 +885,31 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BitFair-BitFairUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-BitFair-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C67223FA3E7DEC2AF97E8A1A /* [CP] Check Pods Manifest.lock */ = {
+		E7D2838D318B770F5D2CE9B9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BitFair/Pods-BitFair-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BitFair/Pods-BitFair-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BitFair/Pods-BitFair-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0BA21027E3DA819C999A3DD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -931,7 +931,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EF2E1E25D7D138DBACEEC5E1 /* [CP] Check Pods Manifest.lock */ = {
+		F9494A37895CF16C000D190D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -946,7 +946,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BitFair-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-BitFair-BitFairUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1211,13 +1211,14 @@
 		};
 		D1EC232128D0AD0000486EA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B0636A3258FF5F662FE42E61 /* Pods-BitFair.debug.xcconfig */;
+			baseConfigurationReference = B664B207136CA1257E7AA180 /* Pods-BitFair.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 62C374FX49;
+				DEVELOPMENT_TEAM = 9BD44B69BD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BitFair/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1227,28 +1228,31 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = blissnyashki.BitFair;
+				PRODUCT_BUNDLE_IDENTIFIER = com.geniuslineltd.bitfair;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = bitfairProvisioningProfile;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		D1EC232228D0AD0000486EA6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 26187D870C4C5D2CBED9259B /* Pods-BitFair.release.xcconfig */;
+			baseConfigurationReference = 1C76935E462C2417FE9DA8B1 /* Pods-BitFair.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 62C374FX49;
+				DEVELOPMENT_TEAM = 9BD44B69BD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BitFair/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1258,22 +1262,24 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = blissnyashki.BitFair;
+				PRODUCT_BUNDLE_IDENTIFIER = com.geniuslineltd.bitfair;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = bitfairProvisioningProfile;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		D1EC232428D0AD0000486EA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 87B6173768AED7488BB1F064 /* Pods-BitFairTests.debug.xcconfig */;
+			baseConfigurationReference = 0842BCD040037A0045F7F5C3 /* Pods-BitFairTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1294,7 +1300,7 @@
 		};
 		D1EC232528D0AD0000486EA6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E3CB802DADD18A8085A0E3DC /* Pods-BitFairTests.release.xcconfig */;
+			baseConfigurationReference = D109F01E7E0889381F349F3D /* Pods-BitFairTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1315,7 +1321,7 @@
 		};
 		D1EC232728D0AD0000486EA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 437C7CCD740DF04186202E76 /* Pods-BitFair-BitFairUITests.debug.xcconfig */;
+			baseConfigurationReference = 55207B295A10542E50EE7F6B /* Pods-BitFair-BitFairUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1334,7 +1340,7 @@
 		};
 		D1EC232828D0AD0000486EA6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EF038C42B10C4BD49921211F /* Pods-BitFair-BitFairUITests.release.xcconfig */;
+			baseConfigurationReference = 099F0E30F833FA6818AC5AAF /* Pods-BitFair-BitFairUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
