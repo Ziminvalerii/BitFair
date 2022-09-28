@@ -26,7 +26,7 @@ class InstructionNode: SKSpriteNode, FrameNodeProtocol {
     var model: InstructionModel.AllCases = InstructionModel.allCases
     
     var instructionNode: SKLabelNode = {
-        let text =  NSAttributedString(string: \(InstructionModel.joistickTopic.rawValue), attributes: [.font : UIFont(name: "PixelCyr-Normal", size: 17)!, .foregroundColor: UIColor.white])
+        let text =  NSAttributedString(string: InstructionModel.joistickTopic.rawValue, attributes: [.font : UIFont(name: "PixelCyr-Normal", size: 17)!, .foregroundColor: UIColor.white])
         let label = SKLabelNode(attributedText: text)
        // label.frame.size = CGSize(width: 300, height: 500)
         label.preferredMaxLayoutWidth = 400
