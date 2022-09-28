@@ -60,7 +60,7 @@ extension GameSceneManager : SKPhysicsContactDelegate {
             enemy = contact.bodyB.node
         }
         if let enemy = enemy as? EnemyProtocol, let player = player as? CharacterProtocol {
-            let superheroPos = enemy.position.y - scene!.size.height/2 + enemy.size.height/2//player.position.y - player.size.height/2
+            let superheroPos = enemy.frame.maxY - scene!.size.height/2
             print("enemyHead2 \(superheroPos)")
             print("contact \(contact.contactPoint)")
             let range = superheroPos - 10 ... superheroPos + 10

@@ -67,6 +67,7 @@
 		D1E8BA7D28DD1E6400CF764F /* LevelGroundNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E8BA7C28DD1E6400CF764F /* LevelGroundNode.swift */; };
 		D1E8BA9228DE54AF00CF764F /* UpgratedWeaponeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E8BA9128DE54AF00CF764F /* UpgratedWeaponeNode.swift */; };
 		D1E8BA9428DE54EF00CF764F /* UpgratedEnemyWeaponeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E8BA9328DE54EF00CF764F /* UpgratedEnemyWeaponeNode.swift */; };
+		D1EAED1C28E4377D00DF17AC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1EAED1B28E4377D00DF17AC /* StoreKit.framework */; };
 		D1EC22F728D0ACFB00486EA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EC22F628D0ACFB00486EA6 /* AppDelegate.swift */; };
 		D1EC22F928D0ACFB00486EA6 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = D1EC22F828D0ACFB00486EA6 /* GameScene.sks */; };
 		D1EC22FB28D0ACFB00486EA6 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = D1EC22FA28D0ACFB00486EA6 /* Actions.sks */; };
@@ -193,6 +194,7 @@
 		D1E8BA7C28DD1E6400CF764F /* LevelGroundNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelGroundNode.swift; sourceTree = "<group>"; };
 		D1E8BA9128DE54AF00CF764F /* UpgratedWeaponeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgratedWeaponeNode.swift; sourceTree = "<group>"; };
 		D1E8BA9328DE54EF00CF764F /* UpgratedEnemyWeaponeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgratedEnemyWeaponeNode.swift; sourceTree = "<group>"; };
+		D1EAED1B28E4377D00DF17AC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D1EC22F328D0ACFB00486EA6 /* BitFair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitFair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1EC22F628D0ACFB00486EA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1EC22F828D0ACFB00486EA6 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35255820923EC42E30D77F23 /* Pods_BitFair.framework in Frameworks */,
+				D1EAED1C28E4377D00DF17AC /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,6 +707,7 @@
 		DF1CB3282E960AF99C8EDED0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D1EAED1B28E4377D00DF17AC /* StoreKit.framework */,
 				2A613E048A1B5E7C1C784791 /* Pods_BitFair.framework */,
 				1F2F92B8FD5893CF57CD63BA /* Pods_BitFair_BitFairUITests.framework */,
 				E99917D026D18313C9F8B438 /* Pods_BitFairTests.framework */,
@@ -1217,7 +1221,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 8DT35KQUY9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BitFair/Info.plist;
@@ -1251,7 +1255,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 8DT35KQUY9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BitFair/Info.plist;
