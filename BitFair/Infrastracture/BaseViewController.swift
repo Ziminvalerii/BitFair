@@ -16,12 +16,12 @@ class BaseViewController<T>: UIViewController {
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return .landscapeRight
-        } else {
-            return .landscapeLeft
-        }
+        return [.landscapeRight, .landscapeLeft]
     }
+    
+//    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+//        return .landscapeRight
+//    }
 
     override var prefersStatusBarHidden: Bool {
         return true

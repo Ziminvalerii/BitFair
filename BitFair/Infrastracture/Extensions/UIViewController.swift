@@ -28,6 +28,6 @@ class NavigationController: UINavigationController {
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return topViewController?.supportedInterfaceOrientations ?? super.supportedInterfaceOrientations
+        return [.landscapeLeft, .landscapeRight]//topViewController?.supportedInterfaceOrientations ?? super.supportedInterfaceOrientations
     }
 }
