@@ -16,6 +16,8 @@ extension GameSceneManager : SKPhysicsContactDelegate {
             handleContactBtwPlayerEnemy(contact)
         } else if collision == PhysicsBitMask.enemy.bitMask | PhysicsBitMask.weapon.bitMask {
             handleContactBtwEnemyWeapon(contact)
+        } else if collision == PhysicsBitMask.enemyHead.bitMask | PhysicsBitMask.player.bitMask {
+            handleContactBtwEnemyHeadPlayer(contact)
         } else if collision == PhysicsBitMask.player.bitMask | PhysicsBitMask.finish.bitMask {
             handleContactBtwPlayerFinish(contact)
         } else if collision == PhysicsBitMask.bonusGround.bitMask | PhysicsBitMask.player.bitMask {
@@ -60,38 +62,49 @@ extension GameSceneManager : SKPhysicsContactDelegate {
             enemy = contact.bodyB.node
         }
         if let enemy = enemy as? EnemyProtocol, let player = player as? CharacterProtocol {
-            let superheroPos = enemy.frame.maxY - scene!.size.height/2
-            print("enemyHead2 \(superheroPos)")
-            print("contact \(contact.contactPoint)")
-            let range = superheroPos - 10 ... superheroPos + 10
             if Date().timeIntervalSince1970 - contactInterval > 1 {
-                if range.contains(contact.contactPoint.y) {
-                    let hitAction = SKAction.playSoundFileNamed("hitSound.wav", waitForCompletion: false)
-                    if UserDefaultsValues.soundOff {
+                let painAction = SKAction.playSoundFileNamed("painSound.mp3", waitForCompletion: false)
+                if !UserDefaultsValues.soundOff {
+                    self.scene?.run(painAction)
+                }
+                player.setUpHit()
+                hpDelegate?.receiveMessage(with: 1)
+                contactInterval = Date().timeIntervalSince1970
+            }
+        }
+        
+    }
+    
+    private func handleContactBtwEnemyHeadPlayer(_ contact: SKPhysicsContact) {
+        var player: SKNode?
+        var enemyHead: SKNode?
+        if contact.bodyA.categoryBitMask == PhysicsBitMask.enemyHead.bitMask {
+            enemyHead = contact.bodyA.node
+            player = contact.bodyB.node
+        } else {
+            player = contact.bodyA.node
+            enemyHead = contact.bodyB.node
+        }
+        
+        if let enemy = enemyHead?.parent as? EnemyProtocol {
+            if Date().timeIntervalSince1970 - contactInterval > 1 {
+                let hitAction = SKAction.playSoundFileNamed("hitSound.wav", waitForCompletion: false)
+                if !UserDefaultsValues.soundOff {
                     self.scene?.run(hitAction)
-                    }
-                    enemy.hp -= enemy.hp
-                    enemy.setUpKillAction()
-                    enemy.removeFromParent()
-                    switch enemy.reward {
-                    case .coins(let coins):
-                        cointsCount += coins
-                    case .stars(let stars):
-                        starsCount += stars
-                        starsDelegate?.receiveMessage(with: stars)
-                    case .none:
-                        return
-                    case .some(.no):
-                        return
-                    }
-                } else {
-                        let painAction = SKAction.playSoundFileNamed("painSound.mp3", waitForCompletion: false)
-                    if !UserDefaultsValues.soundOff {
-                        self.scene?.run(painAction)
-                    }
-                        player.setUpHit()
-                        hpDelegate?.receiveMessage(with: 1)
-                    
+                }
+                enemy.hp -= enemy.hp
+                enemy.setUpKillAction()
+                enemy.removeFromParent()
+                switch enemy.reward {
+                case .coins(let coins):
+                    cointsCount += coins
+                case .stars(let stars):
+                    starsCount += stars
+                    starsDelegate?.receiveMessage(with: stars)
+                case .none:
+                    return
+                case .some(.no):
+                    return
                 }
                 contactInterval = Date().timeIntervalSince1970
             }

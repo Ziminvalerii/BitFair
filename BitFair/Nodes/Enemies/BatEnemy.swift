@@ -8,22 +8,26 @@
 import SpriteKit
 
 class BatEnemyNode: SKSpriteNode, EnemyProtocol {
+   
     var reward: EnemyKillReward!
     var timeInterval = Date().timeIntervalSince1970
     var hp: Int = 2
     var actionEnded: Bool = true
+    var head: SKSpriteNode!
     // var initialPos: CGPoint?
     convenience init(reward: EnemyKillReward) {
         self.init(imageNamed: "batEnemy")
         self.size = NodesSize.flyEnemy.size
         self.zPosition = 10
         self.name = "bat enemy"
+        self.head = createHead()
+        self.addChild(head)
         setUpPhysics()
         self.reward = reward
     }
     
     func setUpPhysics() {
-        self.physicsBody = SKPhysicsBody(rectangleOf: self.size)
+        self.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: self.size.width, height: self.size.height - 20))
        // self.physicsBody = SKPhysicsBody(texture: self.texture!, size: self.size)
         self.physicsBody?.isDynamic = false
         self.physicsBody?.affectedByGravity = false

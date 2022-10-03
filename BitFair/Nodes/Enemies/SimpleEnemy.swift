@@ -10,6 +10,7 @@ import SpriteKit
 class SimpleEnemy: SKSpriteNode, EnemyProtocol {
     var hp: Int = 1
     var reward: EnemyKillReward!
+    var head: SKSpriteNode!
     
     func setUpAction() {
         let moveBack = SKAction.moveTo(x: self.position.x - 10, duration: 1)
@@ -23,13 +24,15 @@ class SimpleEnemy: SKSpriteNode, EnemyProtocol {
         self.init(imageNamed: "simpleEnemy")
         self.size = NodesSize.simpleEnemy.size
         self.zPosition = 10
+        self.head = createHead()
+        self.addChild(head)
         self.setUpPhysics()
         self.reward = reward
     }
 
     
     func setUpPhysics() {
-        self.physicsBody = SKPhysicsBody(rectangleOf: self.size)
+        self.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: self.size.width, height: self.size.height - 20))
         //self.physicsBody = SKPhysicsBody(texture: self.texture!, size: self.size)
         self.physicsBody?.isDynamic = true
         self.physicsBody?.allowsRotation = false

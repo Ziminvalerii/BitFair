@@ -16,6 +16,8 @@ enum EnemyKillReward {
 protocol EnemyProtocol: SKSpriteNode {
     var hp: Int {get set}
     var reward: EnemyKillReward! {get set}
+    var head: SKSpriteNode! {get set}
+    func createHead()->SKSpriteNode
     func setUpPhysics()
     func setUpAction()
     func setUpBitMasks()
@@ -27,6 +29,17 @@ extension EnemyProtocol {
         self.physicsBody?.categoryBitMask = PhysicsBitMask.enemy.bitMask
         self.physicsBody?.collisionBitMask = PhysicsBitMask.ground.bitMask | PhysicsBitMask.player.bitMask
         self.physicsBody?.contactTestBitMask = PhysicsBitMask.player.bitMask | PhysicsBitMask.weapon.bitMask
+    }
+    
+    func createHead()->SKSpriteNode {
+        let headNode = SKSpriteNode(color: .clear, size: CGSize(width: self.size.width/1.5, height: 4))
+        headNode.physicsBody = SKPhysicsBody(rectangleOf: headNode.size)
+        headNode.physicsBody?.isDynamic = false
+        headNode.physicsBody?.categoryBitMask = PhysicsBitMask.enemyHead.bitMask
+        headNode.physicsBody?.contactTestBitMask = PhysicsBitMask.player.bitMask
+        headNode.physicsBody?.collisionBitMask = PhysicsBitMask.player.bitMask
+        headNode.position = CGPoint(x: 0, y: self.frame.maxY + 2)
+        return headNode
     }
     
     func setUpKillAction() {

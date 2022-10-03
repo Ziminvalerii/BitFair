@@ -11,6 +11,8 @@ class BigEnemyNode: SKSpriteNode, EnemyProtocol {
     var hp: Int = 4
     var timeInterval = Date().timeIntervalSince1970
     var reward: EnemyKillReward!
+    var head: SKSpriteNode!
+    
     convenience init(reward: EnemyKillReward) {
         self.init(imageNamed: "bigEnemy")
         self.size = NodesSize.mainCharacter.size
@@ -20,10 +22,12 @@ class BigEnemyNode: SKSpriteNode, EnemyProtocol {
     }
     
     func setUpPhysics() {
-        self.physicsBody = SKPhysicsBody(rectangleOf: self.size)
+        self.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: self.size.width, height: self.size.height - 20))
       //  self.physicsBody = SKPhysicsBody(texture: self.texture!, size: self.size)
         self.physicsBody?.isDynamic = true
         self.physicsBody?.allowsRotation = false
+        self.head = createHead()
+        self.addChild(head)
         setUpBitMasks()
         self.name = "big enemy"
     }

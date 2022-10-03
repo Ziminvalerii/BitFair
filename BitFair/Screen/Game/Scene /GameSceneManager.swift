@@ -18,6 +18,7 @@ enum PhysicsBitMask {
     case bonusGround
     case enemyWeapon
     case starts
+    case enemyHead
     
     var bitMask: UInt32 {
         switch self {
@@ -39,6 +40,8 @@ enum PhysicsBitMask {
             return 0x1 << 7
         case .starts:
             return 0x1 << 8
+        case .enemyHead:
+            return 0x1 << 9
         }
     }
 }
