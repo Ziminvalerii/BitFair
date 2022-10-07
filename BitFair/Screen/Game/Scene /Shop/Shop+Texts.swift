@@ -10,6 +10,7 @@ import UIKit
 
 extension ShopNode {
      func setBuyForCointsText(_ text: String, enoughCoins: Bool) {
+        
         let text =  NSAttributedString(string: text, attributes: [.font : UIFont(name: "PixelCyr-Normal", size: 17)!, .foregroundColor: enoughCoins ? UIColor.white : UIColor.red])
         if let label = buyButton.childNode(withName: "buy for coins label") as? SKLabelNode {
             label.attributedText = text

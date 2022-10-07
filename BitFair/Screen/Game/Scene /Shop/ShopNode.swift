@@ -56,11 +56,17 @@ class ShopNode:SKSpriteNode, FrameNodeProtocol {
         buyNode.zPosition = 20
         buyNode.name = "buy"
         let text =  NSAttributedString(string: "Buy for \(StoreModel.simpleCharacter.buyForCoins)", attributes: [.font : UIFont(name: "PixelCyr-Normal", size: 17)!, .foregroundColor: UIColor.white])
+        
         let label = SKLabelNode(attributedText: text)
         label.position = CGPoint(x: 0, y:  -label.frame.size.height/2)
         label.zPosition = 21
         label.name = "buy for coins label"
+        let img = SKSpriteNode(imageNamed: "coins")
+        img.zPosition = 21
+        img.size = CGSize(width: 20, height: 20)
+        img.position = CGPoint(x: label.frame.size.width/2 - 28, y: 0)
         buyNode.addChild(label)
+        buyNode.addChild(img)
         return buyNode
     }()
     lazy var watchAdButton: SKSpriteNode = {
@@ -89,6 +95,7 @@ class ShopNode:SKSpriteNode, FrameNodeProtocol {
         label.zPosition = 21
         label.name = "buy for real money label"
         buyForMoneyNode.addChild(label)
+        
         return buyForMoneyNode
     }()
     lazy var getCharacterButton: SKSpriteNode = {
@@ -191,7 +198,7 @@ extension ShopNode: ButtonType {
         guard let scene = scene else {return}
         if containsTouches(touches: touches, scene: scene, nodeNames: ["buy", "buy for coins label"]) {
             if model[currentIndex].buyForCoins ?? 0.0 > Float(UserDefaultsValues.cointsCount) {
-                return
+                delegate.switchState(state: .noEnoughCoins)
             } else {
                 UserDefaultsValues.cointsCount -= model[currentIndex].buyForCoins!
                 updateLabelDelegate?.receiveMessage(with: "update label")

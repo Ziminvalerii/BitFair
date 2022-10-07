@@ -52,7 +52,7 @@ enum NodesSize {
         case .shopArrow:
             return CGSize(width: 36, height: 46)
         case .buyButtons:
-            return CGSize(width: 157, height: 50)
+            return CGSize(width: 180, height: 50)
         case .playButton:
             return CGSize(width: 278, height: 60)
         case .levelGround:

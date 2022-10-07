@@ -44,6 +44,7 @@
 		D1B2AAFC28D4A60E00963D8E /* ReplyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B2AAFB28D4A60E00963D8E /* ReplyButton.swift */; };
 		D1B2AAFE28D4A7D200963D8E /* GameOverNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B2AAFD28D4A7D200963D8E /* GameOverNode.swift */; };
 		D1B2AB0028D4B61400963D8E /* GoToStartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B2AAFF28D4B61400963D8E /* GoToStartButton.swift */; };
+		D1C5FE4928F03EBA00888AB3 /* UImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5FE4828F03EBA00888AB3 /* UImage.swift */; };
 		D1DA7ECC28D9CAA500616A6B /* BigEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DA7ECB28D9CAA500616A6B /* BigEnemy.swift */; };
 		D1DBDBD928E1B02F00AB343D /* MapOverlay+ConfigrureText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DBDBD828E1B02F00AB343D /* MapOverlay+ConfigrureText.swift */; };
 		D1DBDBDB28E1B17300AB343D /* MapOverlay+Touches.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DBDBDA28E1B17300AB343D /* MapOverlay+Touches.swift */; };
@@ -170,6 +171,7 @@
 		D1B2AAFB28D4A60E00963D8E /* ReplyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyButton.swift; sourceTree = "<group>"; };
 		D1B2AAFD28D4A7D200963D8E /* GameOverNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverNode.swift; sourceTree = "<group>"; };
 		D1B2AAFF28D4B61400963D8E /* GoToStartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToStartButton.swift; sourceTree = "<group>"; };
+		D1C5FE4828F03EBA00888AB3 /* UImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UImage.swift; sourceTree = "<group>"; };
 		D1DA7ECB28D9CAA500616A6B /* BigEnemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigEnemy.swift; sourceTree = "<group>"; };
 		D1DBDBD828E1B02F00AB343D /* MapOverlay+ConfigrureText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapOverlay+ConfigrureText.swift"; sourceTree = "<group>"; };
 		D1DBDBDA28E1B17300AB343D /* MapOverlay+Touches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapOverlay+Touches.swift"; sourceTree = "<group>"; };
@@ -599,6 +601,7 @@
 			isa = PBXGroup;
 			children = (
 				D1EC233428D0ADC500486EA6 /* UIViewController.swift */,
+				D1C5FE4828F03EBA00888AB3 /* UImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -987,6 +990,7 @@
 				D1EE4FE728D2049600622C5D /* Router.swift in Sources */,
 				D1B2AAF828D497D900963D8E /* GameOverOverlay.swift in Sources */,
 				D115D37728D8B03200DC0E88 /* EnemyProtocol.swift in Sources */,
+				D1C5FE4928F03EBA00888AB3 /* UImage.swift in Sources */,
 				D13ED65D28DB6D42009495C8 /* ShopOverlay.swift in Sources */,
 				D1B2AAEF28D469CC00963D8E /* HealthPointNode.swift in Sources */,
 				D115D37E28D8B8F400DC0E88 /* WeaponeProtocol.swift in Sources */,
@@ -1221,7 +1225,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 8DT35KQUY9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BitFair/Info.plist;
@@ -1255,7 +1259,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 8DT35KQUY9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BitFair/Info.plist;

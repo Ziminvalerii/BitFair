@@ -31,7 +31,13 @@ class GameViewController: BaseViewController<GamePresenterProtocol>, GameViewPro
         }
     }
 
-   
+    func showAlert() {
+        let alertController = UIAlertController(title: "Not enough coins", message: "You don`t have enough coins", preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Got it", style: UIAlertAction.Style.cancel)
+        cancel.setValue(UIColor.red, forKey: "titleTextColor")
+        alertController.addAction(cancel)
+        self.present(alertController, animated: true, completion: nil)
+    }
     
     func showSettingsView(showRestartButton:Bool) {
         let view = presenter.showSettingsView(showRestartButton: showRestartButton)

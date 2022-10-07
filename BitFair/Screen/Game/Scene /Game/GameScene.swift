@@ -98,6 +98,10 @@ extension GameScene: Dependable {
             self.stateMachine.enter(InstructionState.self)
         } else if state == GameStates.goToMap {
             self.stateMachine.enter(MapState.self)
+        } else if state == .noEnoughCoins {
+            if let parentVC = parentViewController {
+                parentVC.showAlert()
+            }
         }
         
     }

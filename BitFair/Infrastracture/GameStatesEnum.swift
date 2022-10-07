@@ -18,4 +18,5 @@ enum GameStates: String {
     case rescurentWithCoints = "rescurent with coins"
     case goToInstruction = "go to Instruction"
     case goToMap = "map"
+    case noEnoughCoins = "not enough"
 }
