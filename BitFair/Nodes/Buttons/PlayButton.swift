@@ -40,8 +40,9 @@ extension PlayButtonNode: ButtonType {
             guard let scene = scene else {return}
             if self.contains(touch.location(in: scene)) {
                 delegate.switchState(state: GameStates.goToMap)
+                playSound(scene)
             }
-            playSound(scene)
+            
         }
     }
 }

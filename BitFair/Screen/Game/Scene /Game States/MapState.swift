@@ -35,6 +35,13 @@ class MapState: GKState {
     
     override func willExit(to nextState: GKState) {
         mapOverlay.dissapear()
+        gameSceneManager?.toucheble.removeAll(where: { node in
+            if let node = node as? SKNode {
+                return node.name == "map overlay node" 
+            } else {
+                return false
+            }
+        })
     }
 
 }

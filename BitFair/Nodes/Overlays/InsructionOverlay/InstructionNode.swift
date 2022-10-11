@@ -10,11 +10,7 @@ import SpriteKit
 
 class InstructionNode: SKSpriteNode, FrameNodeProtocol {
     var currentIndex: Int = 0
-    var shouldAcceptTouches: Bool = true {
-        didSet {
-            self.isUserInteractionEnabled = shouldAcceptTouches
-        }
-    }
+    var shouldAcceptTouches: Bool = true 
     
     var delegate: Dependable {
         guard let delegate = scene as? Dependable else {
@@ -55,7 +51,7 @@ class InstructionNode: SKSpriteNode, FrameNodeProtocol {
     lazy var backButton: SKSpriteNode = {
         let backNode = SKSpriteNode(imageNamed: "buyButtonContainer")
         backNode.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        backNode.size = NodesSize.buyButtons.size
+        backNode.size = NodesSize.cointsLabel.size
         backNode.zPosition = 20
         backNode.name = "back"
         let text =  NSAttributedString(string: "back", attributes: [.font : UIFont(name: "PixelCyr-Normal", size: 17)!, .foregroundColor: UIColor.white])
@@ -95,23 +91,25 @@ class InstructionNode: SKSpriteNode, FrameNodeProtocol {
 extension InstructionNode {
     func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?, in scene: SKScene?) {
         guard let scene = scene else {return}
-        if containsTouches(touches: touches, scene: scene, nodeName: "back") {
+        if containsTouches(touches: touches, scene: scene, nodeNames: ["back", "back label"]) {
             self.delegate.switchState(state: .start)
+            playSound(scene)
         } else if containsTouches(touches: touches, scene: scene, nodeName: "instruction left arrow") {
             currentIndex -= 1
             if currentIndex < 0 {
                 currentIndex = model.count-1
             }
             setText(model[currentIndex].rawValue)
+            playSound(scene)
         } else if containsTouches(touches: touches, scene: scene, nodeName: "instruction right arrow") {
             currentIndex += 1
             if currentIndex > model.count - 1 {
                 currentIndex = 0
             }
             setText(model[currentIndex].rawValue)
-            
+            playSound(scene)
         }
-        playSound(scene)
+       
     }
 }
 

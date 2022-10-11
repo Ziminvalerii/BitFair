@@ -16,7 +16,8 @@ class PlayingState: GKState {
     var playerNode: CharacterProtocol!
     var joistickNode: Joistick!
     var upHitJoistick: UpHitJoistick!
-    var settingsButton: SettingsButtonNode!
+    lazy var backButton = BackButtonNode()
+   // var settingsButton: SettingsButtonNode!
     
     init(gameSceneManager: GameSceneManager) {
         self.gameSceneManager = gameSceneManager
@@ -29,6 +30,7 @@ class PlayingState: GKState {
             guard let character = gameSceneManager.playableChacarter else {return}
             let healthNode = scene.childNode(withName: "health point") as! HealthPointNode
             healthNode.hp = character.hp
+            
             return
         }
         gameSceneManager.cointsCount = 0 
@@ -50,25 +52,26 @@ class PlayingState: GKState {
         gameSceneManager.updatable.append(joistickNode)
         gameSceneManager.toucheble.append(upHitJoistick)
         gameSceneManager.updatable.append(upHitJoistick)
+        
+        backButton.setUpPos(pos: CGPoint(x: (-scene.size.width/2+backButton.size.width/2 + 32), y: (scene.size.height/2-backButton.size.height-100)))
         hpNode = HealthPointNode(sceneSize: scene.size, healthPoints: playerNode.hp)
+        hpNode.setUpXpos(x: backButton.position.x + backButton.size.width/2 + 16 + hpNode.size.width/2)
         gameSceneManager.hpDelegate = hpNode
         gameSceneManager.updatable.append(hpNode)
         startsCountNode = StarsNode(sceneSize: scene.size, star: 3)
+        startsCountNode.setUpXpos(x: backButton.position.x + backButton.size.width/2 + 16 + startsCountNode.size.width/2)
         gameSceneManager.starsDelegate = startsCountNode
         gameSceneManager.updatable.append(startsCountNode)
         scene.addChild(startsCountNode)
-        let xPos = hpNode.position.x + hpNode.size.width/2 + cointsLabel.frame.width/2
+       // let xPos = hpNode.position.x + hpNode.size.width/2 + cointsLabel.frame.width/2
         cointsLabel.setUpPosition(position: CGPoint(x: scene.size.width/2 - cointsLabel.size.width/2 - 32, y: hpNode.position.y))
         gameSceneManager.updatable.append(cointsLabel)
         gameSceneManager.cointsLabel = cointsLabel
-        settingsButton = SettingsButtonNode(at: scene.size)
-        settingsButton.setUpPosition(position: CGPoint(x: cointsLabel.position.x, y: startsCountNode.position.y))
-        settingsButton.size = NodesSize.cointsLabel.size
-        gameSceneManager.updatable.append(settingsButton)
-        gameSceneManager.toucheble.append(settingsButton)
+        gameSceneManager.updatable.append(backButton)
+        gameSceneManager.toucheble.append(backButton)
         scene.addChild(cointsLabel)
         scene.addChild(hpNode)
-        scene.addChild(settingsButton)
+        scene.addChild(backButton)
     }
 
     

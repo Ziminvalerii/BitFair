@@ -9,11 +9,7 @@ import SpriteKit
 
 class InstructionButtonNode:SKSpriteNode{
     
-    var shouldAcceptTouches: Bool = true {
-        didSet {
-            self.isUserInteractionEnabled = shouldAcceptTouches
-        }
-    }
+    var shouldAcceptTouches: Bool = true 
     
     var delegate: Dependable {
         guard let delegate = scene as? Dependable else {
@@ -36,10 +32,12 @@ class InstructionButtonNode:SKSpriteNode{
 
 extension InstructionButtonNode: ButtonType {
    
-    func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?, in scene: SKScene?) {        guard let scene = scene else {return}
+    func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?, in scene: SKScene?) {
+        guard let scene = scene else {return}
         if containsTouches(touches: touches, scene: scene, nodeName: "instruction button") {
         delegate.switchState(state: .goToInstruction)
+            playSound(scene)
         }
-        playSound(scene)
+        
     }
 }

@@ -8,11 +8,7 @@
 import SpriteKit
 
 class ReplayButtonNode:SKSpriteNode {
-    var shouldAcceptTouches: Bool = true {
-        didSet {
-            self.isUserInteractionEnabled = shouldAcceptTouches
-        }
-    }
+    var shouldAcceptTouches: Bool = true 
     
     var delegate: Dependable {
         guard let delegate = scene as? Dependable else {
@@ -37,9 +33,9 @@ extension ReplayButtonNode: ButtonType {
         guard let scene = scene else {return}
         if containsTouches(touches: touches, scene: scene, nodeName: "replay") {
             self.delegate.switchState(state: .playing)
+            playSound(scene)
             return
         }
-        playSound(scene)
     }
     
     

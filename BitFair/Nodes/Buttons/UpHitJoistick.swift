@@ -9,11 +9,7 @@ import SpriteKit
 
 
 class UpHitJoistick: SKSpriteNode {
-    var shouldAcceptTouches: Bool = true {
-        didSet {
-            self.isUserInteractionEnabled = shouldAcceptTouches
-        }
-    }
+    var shouldAcceptTouches: Bool = true 
     
     lazy var hitNode: SKSpriteNode = {
         let hit = SKSpriteNode(imageNamed: "hitButtonTexture")
@@ -84,6 +80,7 @@ extension UpHitJoistick: ButtonType {
                 self.delegate?.recieveMessage(with: "weapon", type: Int.self, completion: { arg in
                         self.setUpLabel(text: arg.description)
                 })
+                playSound(scene)
             } else if containsTouches(touches: touches, scene: scene, nodeName: "up") {
                 if isDoubleJumping {
                     return
@@ -102,8 +99,9 @@ extension UpHitJoistick: ButtonType {
                         self.isJumping = false
                     })
                 }
+                playSound(scene)
             }
-            playSound(scene)
+           
         }
     }
     

@@ -11,6 +11,7 @@ class HealthPointNode: SKSpriteNode {
     lazy var activeHeart: SKTexture = SKTexture(imageNamed: "heartImage")
     lazy var unactiveHeart: SKTexture = SKTexture(imageNamed: "unactiveHeartImage")
     var hearts: [SKSpriteNode] = [SKSpriteNode]()
+    private var startPos = CGPoint.zero
     var hp: Int = 0 {
         didSet {
             for i in 0..<hp {
@@ -52,6 +53,16 @@ class HealthPointNode: SKSpriteNode {
         self.name = "health point"
     }
     
+    func setUpPos(pos: CGPoint) {
+        self.position = pos
+        self.startPos = position
+    }
+    
+    func setUpXpos(x: CGFloat) {
+        self.position.x = x
+        startPos = position
+    }
+    
     private func initHeart()->SKSpriteNode {
         let heart = SKSpriteNode(texture: activeHeart)
         heart.zPosition = 11
@@ -75,7 +86,7 @@ extension HealthPointNode: Dependable {
 extension HealthPointNode: Updatable {
     func update() {
         guard let camera = scene?.camera else {return}
-        self.position.x = camera.position.x - (scene!.size.width/2-self.size.width/2 - 32)
+        self.position.x = camera.position.x + startPos.x
     }
 }
 

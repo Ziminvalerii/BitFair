@@ -56,7 +56,7 @@ extension EnemyWeaponProtocol {
         } else {
             xPos = targetPos.x + scene.size.width/2
         }
-        let moveAction = SKAction.move(to: CGPoint(x: -scene.size.width/2, y: enemyPos.y), duration: 6.0)
+        let moveAction = SKAction.move(to: CGPoint(x: -scene.size.width/2, y: enemyPos.y), duration: 12.0)
         self.run(SKAction.sequence([moveAction, SKAction.run {
                 self.removeFromParent()
         }]))

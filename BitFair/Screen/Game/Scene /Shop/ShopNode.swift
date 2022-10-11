@@ -16,11 +16,7 @@ class ShopNode:SKSpriteNode, FrameNodeProtocol {
     var model: StoreModel.AllCases = StoreModel.allCases
     var currentIndex: Int = 0
     
-    var shouldAcceptTouches: Bool = true {
-        didSet {
-            self.isUserInteractionEnabled = shouldAcceptTouches
-        }
-    }
+    var shouldAcceptTouches: Bool = true 
     
     var delegate: Dependable {
         guard let delegate = scene as? Dependable else {
@@ -52,7 +48,7 @@ class ShopNode:SKSpriteNode, FrameNodeProtocol {
     lazy var buyButton: SKSpriteNode = {
         let buyNode = SKSpriteNode(imageNamed: "buyButtonContainer")
         buyNode.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        buyNode.size = NodesSize.buyButtons.size
+        buyNode.size = NodesSize.cointsLabel.size
         buyNode.zPosition = 20
         buyNode.name = "buy"
         let text =  NSAttributedString(string: "Buy for \(StoreModel.simpleCharacter.buyForCoins)", attributes: [.font : UIFont(name: "PixelCyr-Normal", size: 17)!, .foregroundColor: UIColor.white])
@@ -64,7 +60,7 @@ class ShopNode:SKSpriteNode, FrameNodeProtocol {
         let img = SKSpriteNode(imageNamed: "coins")
         img.zPosition = 21
         img.size = CGSize(width: 20, height: 20)
-        img.position = CGPoint(x: label.frame.size.width/2 - 28, y: 0)
+        img.position = CGPoint(x: label.frame.size.width/2 - 20, y: 0)
         buyNode.addChild(label)
         buyNode.addChild(img)
         return buyNode
@@ -72,7 +68,7 @@ class ShopNode:SKSpriteNode, FrameNodeProtocol {
     lazy var watchAdButton: SKSpriteNode = {
         let watchAdNode = SKSpriteNode(imageNamed: "buyButtonContainer")
         watchAdNode.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        watchAdNode.size = NodesSize.buyButtons.size
+        watchAdNode.size = NodesSize.cointsLabel.size
         watchAdNode.zPosition = 20
         watchAdNode.name = "watch ad"
         let text =  NSAttributedString(string: "Watch ad", attributes: [.font : UIFont(name: "PixelCyr-Normal", size: 17)!, .foregroundColor: UIColor.white])
@@ -86,7 +82,7 @@ class ShopNode:SKSpriteNode, FrameNodeProtocol {
     lazy var buyForMoneyButton: SKSpriteNode = {
         let buyForMoneyNode = SKSpriteNode(imageNamed: "buyButtonContainer")
         buyForMoneyNode.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        buyForMoneyNode.size = NodesSize.buyButtons.size
+        buyForMoneyNode.size = NodesSize.cointsLabel.size
         buyForMoneyNode.zPosition = 20
         buyForMoneyNode.name = "buy for money"
         let text =  NSAttributedString(string: "Buy for money", attributes: [.font : UIFont(name: "PixelCyr-Normal", size: 17)!, .foregroundColor: UIColor.white])
@@ -101,7 +97,7 @@ class ShopNode:SKSpriteNode, FrameNodeProtocol {
     lazy var getCharacterButton: SKSpriteNode = {
         let getCharacterNode = SKSpriteNode(imageNamed: "buyButtonContainer")
         getCharacterNode.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        getCharacterNode.size = NodesSize.buyButtons.size
+        getCharacterNode.size = NodesSize.cointsLabel.size
         getCharacterNode.zPosition = 20
         getCharacterNode.name = "get character"
         let text =  NSAttributedString(string: "Get character", attributes: [.font : UIFont(name: "PixelCyr-Normal", size: 17)!, .foregroundColor: UIColor.white])
@@ -113,20 +109,7 @@ class ShopNode:SKSpriteNode, FrameNodeProtocol {
         return getCharacterNode
     }()
     
-    lazy var backButton: SKSpriteNode = {
-        let backNode = SKSpriteNode(imageNamed: "buyButtonContainer")
-        backNode.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        backNode.size = NodesSize.playButton.size
-        backNode.zPosition = 20
-        backNode.name = "back"
-        let text =  NSAttributedString(string: "back", attributes: [.font : UIFont(name: "PixelCyr-Normal", size: 17)!, .foregroundColor: UIColor.white])
-        let label = SKLabelNode(attributedText: text)
-        label.position = CGPoint(x: 0, y: -label.frame.size.height/2)
-        label.zPosition = 21
-        label.name = "back label"
-        backNode.addChild(label)
-        return backNode
-    }()
+    
     
     lazy var character: SKSpriteNode = {
         let node = SKSpriteNode(texture: StoreModel.simpleCharacter.texture)
@@ -149,11 +132,11 @@ class ShopNode:SKSpriteNode, FrameNodeProtocol {
         configureButtons(model: model[currentIndex])
         leftArrow.position = CGPoint(x: -self.size.width/2+leftArrow.size.width/2+200, y: character.position.y)
         rigtArrow.position = CGPoint(x: self.size.width/2-leftArrow.size.width/2-200, y: character.position.y)
-        backButton.position = CGPoint(x: 0, y: -self.size.height/2+backButton.size.height/2+64)
+    //    backButton.position = CGPoint(x: 0, y: -self.size.height/2+backButton.size.height/2+64)
         self.addChild(character)
         self.addChild(leftArrow)
         self.addChild(rigtArrow)
-        self.addChild(backButton)
+      //  self.addChild(backButton)
         self.requestProduct()
     }
     
@@ -198,6 +181,8 @@ extension ShopNode: ButtonType {
         guard let scene = scene else {return}
         if containsTouches(touches: touches, scene: scene, nodeNames: ["buy", "buy for coins label"]) {
             if model[currentIndex].buyForCoins ?? 0.0 > Float(UserDefaultsValues.cointsCount) {
+                buyButton.shakeCamera(duration: 0.7)
+                playVibration()
                 delegate.switchState(state: .noEnoughCoins)
             } else {
                 UserDefaultsValues.cointsCount -= model[currentIndex].buyForCoins!
@@ -236,9 +221,6 @@ extension ShopNode: ButtonType {
             configureButtons(model: model[currentIndex])
             playSound(scene)
             
-        } else if containsTouches(touches: touches, scene: scene, nodeNames: ["back", "back label"]) {
-            playSound(scene)
-            self.delegate.switchState(state: .start)
-        }
+        } 
     }
 }

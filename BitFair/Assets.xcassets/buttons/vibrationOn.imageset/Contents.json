@@ -1,15 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "vibration on.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "sound on.png",
+      "filename" : "vibration on@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "vibration on@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

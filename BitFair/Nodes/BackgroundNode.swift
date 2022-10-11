@@ -39,7 +39,7 @@ class BackgroundNode: SKSpriteNode {
     
     
     convenience init(at sceneSize: CGSize, level: LevelManager) {
-        self.init(color: .red, size: CGSize(width: sceneSize.width*2, height: sceneSize.height))
+        self.init(color: .blue, size: CGSize(width: sceneSize.width*2, height: sceneSize.height))
         self.sceneSize = sceneSize
         self.anchorPoint = CGPoint(x: 0, y: 0)
         self.levelManager = level

@@ -47,7 +47,7 @@ class BatEnemyNode: SKSpriteNode, EnemyProtocol {
         let range = xpos - 400 ... xpos + 300
         let rangeY = yPos - 35 ... self.position.y + 35
             if range.contains(heroPos.x) && rangeY.contains(heroPos.y) {
-                if Date().timeIntervalSince1970 - timeInterval > 1 {
+                if Date().timeIntervalSince1970 - timeInterval > 1.5 {
                     let weaponeNode = EnemyWeaponNode()
                     weaponeNode.position = CGPoint(x: xpos, y: yPos)
                     scene.addChild(weaponeNode)

@@ -77,12 +77,8 @@ extension GameScene: Dependable {
         } else if state == GameStates.start {
             self.stateMachine.enter(StartState.self)
         } else if state == GameStates.goToSettings {
-            var showRestarButton = false
-            self.scene?.isPaused = true
-            if let currentState = stateMachine.currentState {
-                showRestarButton = ((currentState as? PlayingState) != nil)
-            }
-            parentViewController?.showSettingsView(showRestartButton: showRestarButton)
+            self.isUserInteractionEnabled = false
+            parentViewController?.showSettingsView()
         } else if state == GameStates.goToShop {
             self.stateMachine.enter(ShopState.self)
         } else if state == GameStates.watchAd {

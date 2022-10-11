@@ -57,7 +57,7 @@ class GameSceneManager : NSObject, GameSceneManagerProtocol {
     var endless: [Endless] = [Endless]()
     var cointsCount: Int = 0 {
         didSet {
-            cointsLabel?.setText(text: "Coints amount: \(cointsCount)")
+            cointsLabel?.setText(text: "Coins amount: \(cointsCount)")
         }
     }
     var starsCount: Int = 0

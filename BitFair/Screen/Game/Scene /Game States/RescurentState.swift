@@ -9,18 +9,20 @@ import GameplayKit
 
 class RescurentState: GKState {
     weak var gameSceneManager: GameSceneManager?
-    
+    private var prevState: GKState?
     init(gameSceneManager: GameSceneManager) {
         self.gameSceneManager = gameSceneManager
     }
     
     override func didEnter(from previousState: GKState?) {
         guard let scene = gameSceneManager?.scene as? GameScene else {return}
+        self.prevState = previousState
         //scene.parentViewController?.showRewardedAd()
     }
     
     override func willExit(to nextState: GKState) {
-        if let nextState = nextState as? PlayingState {
+        //let resc = prevState is RescurentState && nextState is 
+        if nextState is PlayingState {
             guard let scene = gameSceneManager?.scene else {return}
             scene.isPaused = false
             let backgroundOverlay = scene.childNode(withName: "game over overlay")
@@ -32,6 +34,11 @@ class RescurentState: GKState {
                     return false
                 }
             })
+            if let hero = gameSceneManager?.playableChacarter as? CharacterProtocol {
+                hero.position.x -= 20
+            }
+        } else if nextState is RescurentState {
+            return
         } else {
             gameSceneManager?.toucheble.removeAll()
             gameSceneManager?.updatable.removeAll()

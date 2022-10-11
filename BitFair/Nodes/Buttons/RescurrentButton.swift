@@ -13,11 +13,7 @@ enum RescurentButtonType {
 }
 
 class RescurrrentButton:SKSpriteNode {
-    var shouldAcceptTouches: Bool = true {
-        didSet {
-            self.isUserInteractionEnabled = shouldAcceptTouches
-        }
-    }
+    var shouldAcceptTouches: Bool = true 
     
     lazy var label: SKLabelNode = {
         let text =  NSAttributedString(string: "Watch add", attributes: [.font : UIFont(name: "PixelCyr-Normal", size: 24)!, .foregroundColor: UIColor.black])
@@ -43,6 +39,7 @@ class RescurrrentButton:SKSpriteNode {
         self.zPosition = 24
         self.type = type
         setText(type == .withCoins ? "\(level.currentLevel.cointsForRescurent) coins" : "Watch add")
+        label.name = type == .withCoins ? "coins" : "watch ad"
         self.addChild(label)
         self.position = CGPoint(x: 0, y: 0)
         self.name = "rescurent node \(type == .watchAdd ? "with add" : "with coins")"
@@ -58,7 +55,8 @@ class RescurrrentButton:SKSpriteNode {
 extension RescurrrentButton: ButtonType {
     func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?, in scene: SKScene?) {
         guard let scene = scene else {return}
-        if containsTouches(touches: touches, scene: scene, nodeName: "rescurent node \(type == .watchAdd ? "with add" : "with coins")") {
+        let labelname = type == .withCoins ? "coins" : "watch ad"
+        if containsTouches(touches: touches, scene: scene, nodeNames: ["rescurent node \(type == .watchAdd ? "with add" : "with coins")", labelname]) {
             if type == .watchAdd {
                 stopPlaying()
                 delegate.switchState(state: .watchAd)

@@ -93,6 +93,7 @@ extension GameSceneManager : SKPhysicsContactDelegate {
                     cointsCount += coins
                 case .stars(let stars):
                     starsCount += stars
+                    print("------- stars count \(stars)")
                     starsDelegate?.receiveMessage(with: stars)
                 case .none:
                     return
@@ -213,6 +214,7 @@ extension GameSceneManager : SKPhysicsContactDelegate {
                 contact.bodyB.node?.removeFromParent()
                 starsCount += 1
             }
+        print("------------ stars in ground \(starsCount)")
             starsDelegate?.receiveMessage(with: 1)
     }
     

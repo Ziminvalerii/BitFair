@@ -9,11 +9,7 @@ import SpriteKit
 
 class WinOverlay: SKSpriteNode {
     
-    var shouldAcceptTouches: Bool = true {
-        didSet {
-            self.isUserInteractionEnabled = shouldAcceptTouches
-        }
-    }
+    var shouldAcceptTouches: Bool = true 
     
     var delegate: Dependable {
         guard let delegate = scene as? Dependable else {
@@ -31,6 +27,7 @@ class WinOverlay: SKSpriteNode {
         let label = SKLabelNode(attributedText: text)
         label.zPosition = 25
         label.position = CGPoint(x: 0, y: -label.frame.size.height/2)
+        label.name = "ok button label"
         button.addChild(label)
         button.name = "ok button"
         return button
@@ -76,7 +73,7 @@ extension WinOverlay: ButtonType {
     
     func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?, in scene: SKScene?) {
         guard let scene = scene else {return}
-        if containsTouches(touches: touches, scene: scene, nodeName: "ok button") {
+        if containsTouches(touches: touches, scene: scene, nodeNames: ["ok button", "ok button label"]) {
             delegate.switchState(state: .goToMap)
         } else if containsTouches(touches: touches, scene: scene, nodeName: "Watch ad button") {
             return

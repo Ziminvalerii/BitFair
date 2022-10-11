@@ -9,7 +9,6 @@ import Foundation
 
 protocol BuilderProtocol {
     func resolveGameViewController(router: RouterProtocol) -> GameViewController
-    func resolveSettingsView() -> SettingsView
 }
 
 class Builder: BuilderProtocol {
@@ -18,10 +17,5 @@ class Builder: BuilderProtocol {
         let vc = GameViewController.instantiateMyViewController(name: .game)
         vc.presenter = GamePresenter(view: vc, router: router, adManager: AdsManager())
         return vc
-    }
-    
-    func resolveSettingsView() -> SettingsView {
-        let view = SettingsView()
-        return view
     }
 }

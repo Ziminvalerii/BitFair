@@ -10,7 +10,7 @@ import SpriteKit
 class CointsLabel: SKSpriteNode {
     
     lazy var label: SKLabelNode = {
-        let text =  NSAttributedString(string: "Coints amount: 0", attributes: [.font : UIFont(name: "PixelCyr-Normal", size: 24)!, .foregroundColor: UIColor.white])
+        let text =  NSAttributedString(string: "Coins amount: 0", attributes: [.font : UIFont(name: "PixelCyr-Normal", size: 24)!, .foregroundColor: UIColor.white])
         let label = SKLabelNode(attributedText: text)
         label.zPosition = 11
         label.position = CGPoint(x: 0, y: -label.frame.height/2)

@@ -34,6 +34,8 @@
 		D15BBAB428D3B7A3009503A4 /* SimpleEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15BBAB328D3B7A2009503A4 /* SimpleEnemy.swift */; };
 		D15BBAB728D452D7009503A4 /* getCoinsSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = D15BBAB628D452D7009503A4 /* getCoinsSound.wav */; };
 		D15BBABB28D45A99009503A4 /* backgroundSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = D15BBABA28D45A99009503A4 /* backgroundSound.wav */; };
+		D168F1B628F59F3500451401 /* VibrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D168F1B528F59F3500451401 /* VibrationManager.swift */; };
+		D168F1B828F5A63A00451401 /* SKSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D168F1B728F5A63A00451401 /* SKSpriteNode.swift */; };
 		D1B2AAED28D4689200963D8E /* hitSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = D1B2AAEC28D4689100963D8E /* hitSound.wav */; };
 		D1B2AAEF28D469CC00963D8E /* HealthPointNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B2AAEE28D469CC00963D8E /* HealthPointNode.swift */; };
 		D1B2AAF128D485E400963D8E /* painSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D1B2AAF028D485E400963D8E /* painSound.mp3 */; };
@@ -101,13 +103,15 @@
 		D1EE4FD828D1FB1300622C5D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EE4FD728D1FB1300622C5D /* SettingsView.swift */; };
 		D1EE4FDA28D1FC1900622C5D /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EE4FD928D1FC1900622C5D /* BaseView.swift */; };
 		D1EE4FDC28D1FC4700622C5D /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EE4FDB28D1FC4700622C5D /* SettingsPresenter.swift */; };
-		D1EE4FDF28D1FDBB00622C5D /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EE4FDE28D1FDBB00622C5D /* SettingsModel.swift */; };
 		D1EE4FE328D2039D00622C5D /* GamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EE4FE228D2039D00622C5D /* GamePresenter.swift */; };
 		D1EE4FE528D203B100622C5D /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EE4FE428D203B100622C5D /* BaseViewController.swift */; };
 		D1EE4FE728D2049600622C5D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EE4FE628D2049600622C5D /* Router.swift */; };
 		D1EE4FE928D2049F00622C5D /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EE4FE828D2049F00622C5D /* Builder.swift */; };
 		D1EF985E28E2369000B42EEC /* starCollect.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D1EF985D28E2369000B42EEC /* starCollect.mp3 */; };
 		D1EF986028E23DC500B42EEC /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EF985F28E23DC500B42EEC /* MusicPlayer.swift */; };
+		D1F01F9128F5658900549985 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F01F9028F5658900549985 /* BackButton.swift */; };
+		D1F01F9328F58FD400549985 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F01F9228F58FD400549985 /* SettingsModel.swift */; };
+		D1F01F9528F5944300549985 /* SettingsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F01F9428F5944300549985 /* SettingsCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +165,8 @@
 		D15BBAB328D3B7A2009503A4 /* SimpleEnemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleEnemy.swift; sourceTree = "<group>"; };
 		D15BBAB628D452D7009503A4 /* getCoinsSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = getCoinsSound.wav; sourceTree = "<group>"; };
 		D15BBABA28D45A99009503A4 /* backgroundSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = backgroundSound.wav; sourceTree = "<group>"; };
+		D168F1B528F59F3500451401 /* VibrationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibrationManager.swift; sourceTree = "<group>"; };
+		D168F1B728F5A63A00451401 /* SKSpriteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKSpriteNode.swift; sourceTree = "<group>"; };
 		D1B2AAEC28D4689100963D8E /* hitSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hitSound.wav; sourceTree = "<group>"; };
 		D1B2AAEE28D469CC00963D8E /* HealthPointNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthPointNode.swift; sourceTree = "<group>"; };
 		D1B2AAF028D485E400963D8E /* painSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = painSound.mp3; sourceTree = "<group>"; };
@@ -232,13 +238,15 @@
 		D1EE4FD728D1FB1300622C5D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D1EE4FD928D1FC1900622C5D /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		D1EE4FDB28D1FC4700622C5D /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
-		D1EE4FDE28D1FDBB00622C5D /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		D1EE4FE228D2039D00622C5D /* GamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePresenter.swift; sourceTree = "<group>"; };
 		D1EE4FE428D203B100622C5D /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		D1EE4FE628D2049600622C5D /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		D1EE4FE828D2049F00622C5D /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		D1EF985D28E2369000B42EEC /* starCollect.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = starCollect.mp3; sourceTree = "<group>"; };
 		D1EF985F28E23DC500B42EEC /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
+		D1F01F9028F5658900549985 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		D1F01F9228F58FD400549985 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsModel.swift; path = BitFair/Screen/Game/Controller/Model/SettingsModel.swift; sourceTree = SOURCE_ROOT; };
+		D1F01F9428F5944300549985 /* SettingsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCollectionViewCell.swift; sourceTree = "<group>"; };
 		E99917D026D18313C9F8B438 /* Pods_BitFairTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitFairTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -316,13 +324,6 @@
 			path = Characters;
 			sourceTree = "<group>";
 		};
-		D13ED65928DB69AB009495C8 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		D13ED65E28DB6D47009495C8 /* GameOverOverlay */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,6 +345,7 @@
 				D1B2AAFB28D4A60E00963D8E /* ReplyButton.swift */,
 				D1B2AAFF28D4B61400963D8E /* GoToStartButton.swift */,
 				D1DCDCA328DC8DF600D25DAA /* InstructionButton.swift */,
+				D1F01F9028F5658900549985 /* BackButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -357,6 +359,7 @@
 				D13ED64628DB0B36009495C8 /* PurchaseModel.swift */,
 				D1DCDC9828DC531100D25DAA /* UserDefaultsValues.swift */,
 				D1EF985F28E23DC500B42EEC /* MusicPlayer.swift */,
+				D168F1B528F59F3500451401 /* VibrationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -394,6 +397,14 @@
 				D1EC22FA28D0ACFB00486EA6 /* Actions.sks */,
 			);
 			path = Resourses;
+			sourceTree = "<group>";
+		};
+		D168F1B428F595B300451401 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D1F01F9228F58FD400549985 /* SettingsModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		D1B2AAF628D497AB00963D8E /* Overlays */ = {
@@ -544,7 +555,7 @@
 			children = (
 				D1EE4FE028D2037400622C5D /* View */,
 				D1EE4FE128D2037C00622C5D /* Presenter */,
-				D13ED65928DB69AB009495C8 /* Model */,
+				D168F1B428F595B300451401 /* Model */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -602,6 +613,7 @@
 			children = (
 				D1EC233428D0ADC500486EA6 /* UIViewController.swift */,
 				D1C5FE4828F03EBA00888AB3 /* UImage.swift */,
+				D168F1B728F5A63A00451401 /* SKSpriteNode.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -686,7 +698,6 @@
 		D1EE4FDD28D1FDA700622C5D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D1EE4FDE28D1FDBB00622C5D /* SettingsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -695,6 +706,7 @@
 			isa = PBXGroup;
 			children = (
 				D1EC22FE28D0ACFB00486EA6 /* GameViewController.swift */,
+				D1F01F9428F5944300549985 /* SettingsCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -969,11 +981,11 @@
 			files = (
 				D13ED64128D9EB94009495C8 /* RescurentState.swift in Sources */,
 				D1DCDC9928DC531100D25DAA /* UserDefaultsValues.swift in Sources */,
-				D1EE4FDF28D1FDBB00622C5D /* SettingsModel.swift in Sources */,
 				D1DCDC9528DBB2E100D25DAA /* StarsNode.swift in Sources */,
 				D1EE4FD828D1FB1300622C5D /* SettingsView.swift in Sources */,
 				D13ED66328DB856D009495C8 /* ShopState.swift in Sources */,
 				D1EC22FD28D0ACFB00486EA6 /* GameScene.swift in Sources */,
+				D168F1B628F59F3500451401 /* VibrationManager.swift in Sources */,
 				D13ED65B28DB69C3009495C8 /* StoreModel.swift in Sources */,
 				D1DBDBDF28E1B21100AB343D /* Shop+ConfigureButtons.swift in Sources */,
 				D1B2AAFE28D4A7D200963D8E /* GameOverNode.swift in Sources */,
@@ -985,14 +997,17 @@
 				D1DCDCA628DC8EB000D25DAA /* InstructionState.swift in Sources */,
 				D15BBAAF28D334F8009503A4 /* TipGround.swift in Sources */,
 				D1E8BA7D28DD1E6400CF764F /* LevelGroundNode.swift in Sources */,
+				D1F01F9528F5944300549985 /* SettingsCollectionViewCell.swift in Sources */,
 				D1DBDBE328E1B2A300AB343D /* Shop+IAP.swift in Sources */,
 				D1DCDCAA28DCEF5900D25DAA /* WinState.swift in Sources */,
 				D1EE4FE728D2049600622C5D /* Router.swift in Sources */,
 				D1B2AAF828D497D900963D8E /* GameOverOverlay.swift in Sources */,
 				D115D37728D8B03200DC0E88 /* EnemyProtocol.swift in Sources */,
 				D1C5FE4928F03EBA00888AB3 /* UImage.swift in Sources */,
+				D168F1B828F5A63A00451401 /* SKSpriteNode.swift in Sources */,
 				D13ED65D28DB6D42009495C8 /* ShopOverlay.swift in Sources */,
 				D1B2AAEF28D469CC00963D8E /* HealthPointNode.swift in Sources */,
+				D1F01F9128F5658900549985 /* BackButton.swift in Sources */,
 				D115D37E28D8B8F400DC0E88 /* WeaponeProtocol.swift in Sources */,
 				D1B2AAFA28D49F8B00963D8E /* RescurrentButton.swift in Sources */,
 				D1DCDC9C28DC6E6D00D25DAA /* InstructionOverlay.swift in Sources */,
@@ -1009,6 +1024,7 @@
 				D1EC233F28D0AEC100486EA6 /* PlayingState.swift in Sources */,
 				D1B2AAF528D48E8100963D8E /* CointsLabel.swift in Sources */,
 				D1EC233528D0ADC500486EA6 /* UIViewController.swift in Sources */,
+				D1F01F9328F58FD400549985 /* SettingsModel.swift in Sources */,
 				D13ED64928DB1372009495C8 /* StarNode.swift in Sources */,
 				D1EE4FD028D1EE5000622C5D /* WeaponNode.swift in Sources */,
 				D1EE4FDA28D1FC1900622C5D /* BaseView.swift in Sources */,
@@ -1223,10 +1239,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
-				DEVELOPMENT_TEAM = 62C374FX49;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 7;
+				DEVELOPMENT_TEAM = 8DT35KQUY9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BitFair/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1242,9 +1258,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.blissnyashki.bitfair;
+				PRODUCT_BUNDLE_IDENTIFIER = com.grapaltd.bitfair;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = bitfairProvisioningProfile;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1257,10 +1273,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
-				DEVELOPMENT_TEAM = 62C374FX49;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 7;
+				DEVELOPMENT_TEAM = 8DT35KQUY9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BitFair/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1276,9 +1292,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.blissnyashki.bitfair;
+				PRODUCT_BUNDLE_IDENTIFIER = com.grapaltd.bitfair;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = bitfairProvisioningProfile;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

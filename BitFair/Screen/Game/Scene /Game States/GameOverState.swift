@@ -40,6 +40,7 @@ class GameOverState: GKState {
             gameSceneManager?.scene?.isPaused = false
             gameSceneManager?.cointsLabel = nil
             gameSceneManager?.cointsCount = 0
+            gameSceneManager?.starsCount = 0
         }
     }
     

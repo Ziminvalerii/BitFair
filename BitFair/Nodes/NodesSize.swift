@@ -24,6 +24,7 @@ enum NodesSize {
     case levelGround
     case playButton
     case cointsLabel
+    case smallButtonTexture
     
     var size: CGSize {
         switch self {
@@ -59,6 +60,8 @@ enum NodesSize {
             return CGSize(width: 180, height: 50)
         case .cointsLabel:
             return CGSize(width: 250, height: 50)
+        case .smallButtonTexture:
+            return CGSize(width: 45, height: 45)
         }
     }
 }

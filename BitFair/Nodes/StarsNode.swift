@@ -9,6 +9,7 @@ import Foundation
 import SpriteKit
 
 class StarsNode:SKSpriteNode {
+    private var startPos = CGPoint.zero
     lazy var activeTexture: SKTexture = SKTexture(imageNamed: "stars")
     lazy var unactiveTexture: SKTexture = SKTexture(imageNamed: "unactiveStarImage")
     var stars: [StarNode] = [StarNode]()
@@ -52,6 +53,17 @@ class StarsNode:SKSpriteNode {
         self.position = CGPoint(x: -(sceneSize.width/2-self.size.width/2 - 32 - NodesSize.heart.size.width), y: (sceneSize.height/2-self.size.height-150))
         self.name = "stars count"
     }
+    
+    
+    func setUpPos(pos: CGPoint) {
+        self.position = pos
+        self.startPos = position
+    }
+    
+    func setUpXpos(x: CGFloat) {
+        self.position.x = x
+        startPos = position
+    }
 }
 
 extension StarsNode: Dependable {
@@ -67,6 +79,6 @@ extension StarsNode: Dependable {
 extension StarsNode: Updatable {
     func update() {
         guard let camera = scene?.camera else {return}
-        self.position.x = camera.position.x - (scene!.size.width/2-self.size.width/2 - 32)
+        self.position.x = camera.position.x + startPos.x
     }
 }

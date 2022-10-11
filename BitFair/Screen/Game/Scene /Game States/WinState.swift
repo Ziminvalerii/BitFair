@@ -42,6 +42,7 @@ class WinState: GKState {
         gameSceneManager?.scene?.camera?.position = CGPoint(x: 0, y: 0)
         gameSceneManager?.cointsLabel = nil
         gameSceneManager?.cointsCount = 0
+        gameSceneManager?.starsCount = 0
         winOverlay.removeFromParent()
     }
     

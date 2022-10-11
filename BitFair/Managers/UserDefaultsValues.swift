@@ -15,6 +15,9 @@ public struct UserDefaultsValues {
         static let playingCharacterKey = "com.playingCharacterKey.key"
         static let levelInfoKey = "com.levelInfoKey"
         static let soundOffKey = "com.soundOff.key"
+        static let musicOffKey = "com.musicOff.key"
+        static let vibrationOffKey = "com.vibrationOff.key"
+        static let brightnessKey = "com.brightness.key"
     }
     
     static var cointsCount: Float {
@@ -87,4 +90,29 @@ public struct UserDefaultsValues {
             UserDefaults.standard.set(newValue, forKey: Keys.soundOffKey)
         }
     }
+    
+    static var musicOff: Bool {
+        get {
+            UserDefaults.standard.bool(forKey: Keys.musicOffKey)
+        } set {
+            UserDefaults.standard.set(newValue, forKey: Keys.musicOffKey)
+        }
+    }
+    
+    static var vibrationOff: Bool {
+        get {
+            UserDefaults.standard.bool(forKey: Keys.vibrationOffKey)
+        } set {
+            UserDefaults.standard.set(newValue, forKey: Keys.vibrationOffKey)
+        }
+    }
+    
+    static var brightness: Float {
+        get {
+            return UserDefaults.standard.float(forKey: Keys.brightnessKey)
+        } set {
+            UserDefaults.standard.set(newValue, forKey: Keys.brightnessKey)
+        }
+    }
+    
  }

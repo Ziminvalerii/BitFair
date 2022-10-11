@@ -25,7 +25,7 @@ class LevelManager {
         for i in 0..<currentLevel.tipPoints.count {
             let tipGround = TipGround(state: currentLevel.tipPoints[i].0)
             tipGround.position = currentLevel.tipPoints[i].1
-          //  tipGround.name = i.description
+            //  tipGround.name = i.description
             tipGrounds.append(tipGround)
         }
         return tipGrounds
@@ -40,7 +40,9 @@ class LevelManager {
             }
         }
         availableLevels.append(contentsOf: completedLevels)
+        if availableLevels.count < 3 {
         availableLevels.append(levels[completedLevels.count])
+        }
         print(availableLevels)
     }
     
@@ -48,8 +50,11 @@ class LevelManager {
         var level = UserDefaultsValues.levelInfo
         var levelExist: Bool = false
         var index = 0
+        print("----- stars \(stars)")
         if let lev = UserDefaultsValues.levelInfo[currentLevel.levelKey] {
-            level[currentLevel.levelKey] = stars
+            if lev < stars {
+                level[currentLevel.levelKey] = stars
+            }
         } else {
             level[currentLevel.levelKey] = stars
         }
@@ -115,16 +120,16 @@ class LevelManager {
     }
     
     func createObstacle() -> SKSpriteNode {
-      
+        
         let obstacleNode = SKSpriteNode(imageNamed: "obstacle")
         obstacleNode.size = NodesSize.obstacle.size
         obstacleNode.zPosition = 3
         obstacleNode.physicsBody = SKPhysicsBody(rectangleOf: obstacleNode.size)
-     //   obstacleNode.physicsBody = SKPhysicsBody(texture: obstacleNode.texture!, size: obstacleNode.size)
+        //   obstacleNode.physicsBody = SKPhysicsBody(texture: obstacleNode.texture!, size: obstacleNode.size)
         obstacleNode.physicsBody?.isDynamic = false
         obstacleNode.physicsBody?.affectedByGravity = false
         obstacleNode.physicsBody?.categoryBitMask = PhysicsBitMask.ground.bitMask
-        obstacleNode.physicsBody?.collisionBitMask = PhysicsBitMask.player.bitMask 
+        obstacleNode.physicsBody?.collisionBitMask = PhysicsBitMask.player.bitMask
         obstacleNode.physicsBody?.contactTestBitMask = PhysicsBitMask.enemyWeapon.bitMask | PhysicsBitMask.weapon.bitMask
         obstacleNode.physicsBody?.usesPreciseCollisionDetection = true
         return obstacleNode
@@ -191,7 +196,7 @@ enum Levels {
     var levelStars: Int {
         var stars: Int = 0
         if let star = UserDefaultsValues.levelInfo[levelKey] {
-        stars = star
+            stars = star
         }
         return stars
     }

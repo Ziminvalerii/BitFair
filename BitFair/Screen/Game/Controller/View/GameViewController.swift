@@ -10,24 +10,56 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: BaseViewController<GamePresenterProtocol>, GameViewProtocol {
+    @IBOutlet weak var settingsView: UIView! {
+        didSet {
+            settingsView.layer.borderWidth = 10.0
+            settingsView.layer.borderColor = UIColor.black.cgColor
+        }
+    }
+    @IBOutlet weak var settingsLabel: UILabel! {
+        didSet {
+            settingsLabel.font = UIFont(name: "Pixel Cyr", size: 30)
+        }
+    }
+    @IBOutlet weak var brightnessLabel: UILabel! {
+        didSet {
+            brightnessLabel.font = UIFont(name: "Pixel Cyr", size: 24)
+        }
+    }
+    @IBOutlet weak var backLabel: UILabel! {
+        didSet {
+            backLabel.font = UIFont(name: "Pixel Cyr", size: 35)
+        }
+    }
+    @IBOutlet weak var settingsCollectionView: UICollectionView! {
+        didSet {
+            settingsCollectionView.delegate = presenter
+            settingsCollectionView.dataSource = presenter
+        }
+    }
+    @IBOutlet weak var brightnessSlider: UISlider! {
+        didSet {
+            brightnessSlider.value =  UserDefaultsValues.brightness
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        settingsView.isHidden = true
         if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
             if let scene = SKScene(fileNamed: "GameScene") {
-                // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
                 if let scene = scene as? GameScene {
                     scene.parentViewController = self
                 }
-                // Present the scene
                 view.presentScene(scene)
             }
             view.ignoresSiblingOrder = true
-//            view.showsFPS = true
-//            view.showsNodeCount = true
-//            view.showsPhysics = true
+            self.navigationController?.navigationBar.isHidden = true
+        }
+        
+        for font in UIFont.familyNames {
+            print(font)
         }
     }
 
@@ -39,35 +71,16 @@ class GameViewController: BaseViewController<GamePresenterProtocol>, GameViewPro
         self.present(alertController, animated: true, completion: nil)
     }
     
-    func showSettingsView(showRestartButton:Bool) {
-        let view = presenter.showSettingsView(showRestartButton: showRestartButton)
-        self.view.addSubview(view)
+    func showWatchErrorAlert() {
+        let alertController = UIAlertController(title: "Failed to watch add", message: "", preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Got it", style: UIAlertAction.Style.cancel)
+        cancel.setValue(UIColor.red, forKey: "titleTextColor")
+        alertController.addAction(cancel)
+        self.present(alertController, animated: true, completion: nil)
     }
     
-    func shopButtonPressed() {
-        if let view = self.view as? SKView {
-            if let scene = view.scene as? GameScene {
-                scene.switchState(state: .goToMap)
-            }
-        }
-    }
-    
-    func restartButtonPressed() {
-        if let view = self.view as? SKView {
-            if let scene = view.scene as? GameScene {
-                scene.switchState(state: .playing)
-            }
-        }
-    }
-    
-    func cancelButtonPressed() {
-        if let view = self.view as? SKView {
-            if let scene = view.scene as? GameScene {
-                if scene.isPaused == true {
-                    scene.isPaused = false
-                }
-            }
-        }
+    func showSettingsView() {
+        settingsView.isHidden = false
     }
     
     func setChilds(childs: [UIView]) {
@@ -81,10 +94,26 @@ class GameViewController: BaseViewController<GamePresenterProtocol>, GameViewPro
         presenter.adManager.showRewardedAds(at: self) { reward in
             if reward != nil {
                 completion()
+            } else {
+                DispatchQueue.main.async {
+                    self.showWatchErrorAlert()
+                }
+                
             }
         }
     }
     
-   
+    @IBAction func backButtonTapped(_ sender: Any) {
+        settingsView.isHidden = true
+        pressedButtonSound()
+        if let view = view as? SKView {
+            view.scene?.isUserInteractionEnabled = true
+        }
+    }
+    
+    @IBAction func brightnessSliderValueChanged(_ sender: Any) {
+        UserDefaultsValues.brightness = Float(brightnessSlider.value)
+        UIScreen.main.brightness = CGFloat(UserDefaultsValues.brightness)
+    }
     
 }

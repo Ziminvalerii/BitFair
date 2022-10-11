@@ -8,11 +8,7 @@
 import SpriteKit
 
 class MapOverlay: SKSpriteNode {
-    var shouldAcceptTouches: Bool = true {
-        didSet {
-            self.isUserInteractionEnabled = shouldAcceptTouches
-        }
-    }
+    var shouldAcceptTouches: Bool = true 
     var selectedLevel: Levels! {
         didSet {
             configureButton()
@@ -90,6 +86,7 @@ class MapOverlay: SKSpriteNode {
         self.alpha = 0
         self.size = size
         self.zPosition = 4
+        self.name = "map overlay node"
         playLevel.position = CGPoint(x: 0, y: -size.height/2 + playLevel.size.height/2 + 100)
         levelLabel.position = CGPoint(x: 0, y: size.height/2 - levelLabel.frame.height/2 - 100)
         backButton.size = coinsLabel.size
@@ -110,7 +107,7 @@ class MapOverlay: SKSpriteNode {
     }
     
     func dissapear() {
-        self.run(SKAction.sequence([SKAction.fadeOut(withDuration: 0.2), SKAction.removeFromParent()]))
+        self.run(SKAction.sequence([SKAction.fadeOut(withDuration: 0.1), SKAction.removeFromParent()]))
     }
     
     func createLevelGround(_ text: String)->SKLabelNode {

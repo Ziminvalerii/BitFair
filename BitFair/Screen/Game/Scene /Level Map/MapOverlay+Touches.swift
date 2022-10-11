@@ -17,28 +17,36 @@ extension MapOverlay: ButtonType {
             changePos(level: levels[0], to: 0)
             changePos(level: levels[1], to: 1)
             changePos(level: levels[2], to: 2)
+            playSound(scene)
         } else if containsTouches(touches: touches, scene: scene, nodeName: "level ground node 2") {
             selectedLevel = levels[1].level
             setText("Level \(String(describing: levels[1].levelName!))")
             changePos(level: levels[1], to: 0)
             changePos(level: levels[2], to: 1)
             changePos(level: levels[0], to: 2)
+            playSound(scene)
         } else if containsTouches(touches: touches, scene: scene, nodeName: "level ground node 3") {
             selectedLevel = levels[2].level
             setText("Level \(String(describing: levels[2].levelName!))")
             changePos(level: levels[2], to: 0)
             changePos(level: levels[0], to: 1)
             changePos(level: levels[1], to: 2)
+            playSound(scene)
         } else if containsTouches(touches: touches, scene: scene, nodeNames: ["play button node", "play label node"]) {
             if playLevel.texture == playButtonTexture {
                 levelManager.currentLevel = selectedLevel
                 gameSceneDelegate?.receiveMessage(with: levelManager)
                 delegate.switchState(state: .playing)
+            } else {
+                playLevel.shakeCamera(duration: 0.7)
+                playVibration()
             }
+            playSound(scene)
         } else if containsTouches(touches: touches, scene: scene, nodeNames: ["back button node", "back label node"]) {
             delegate.switchState(state: .start)
+            playSound(scene)
         }
-        playSound(scene)
+        
     }
     
 }

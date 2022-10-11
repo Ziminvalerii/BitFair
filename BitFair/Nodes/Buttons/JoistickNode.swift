@@ -13,11 +13,7 @@ enum ButtonState: Int {
 }
 
 class Joistick: SKSpriteNode {
-    var shouldAcceptTouches: Bool = true {
-        didSet {
-            self.isUserInteractionEnabled = shouldAcceptTouches
-        }
-    }
+    var shouldAcceptTouches: Bool = true 
     
     lazy var leftArrowNode: SKSpriteNode = {
         let leftArrow = SKSpriteNode(imageNamed: "arrowLeft")
@@ -57,20 +53,20 @@ class Joistick: SKSpriteNode {
 
 extension Joistick: ButtonType {
     func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?, in scene: SKScene?) {
-        if shouldAcceptTouches {
             guard let scene = scene else {return}
             guard let delegate = delegate else {return}
             if containsTouches(touches: touches, scene: scene, nodeName: "left") {
                 self.delegate?.receiveMessage(with: "animate")
                 leftArrowTapped = true
                 rightArrowTapped = false
+                playSound(scene)
             } else if containsTouches(touches: touches, scene: scene, nodeName: "right") {
                 self.delegate?.receiveMessage(with: "animate")
                 rightArrowTapped = true
                 leftArrowTapped = false
+                playSound(scene)
             }
-            playSound(scene)
-        }
+          
     }
 
     
@@ -82,12 +78,13 @@ extension Joistick: ButtonType {
                 self.delegate?.receiveMessage(with: "stop animating")
                 leftArrowTapped = false
                 rightArrowTapped = false
+            //    playSound(scene)
             } else if containsTouches(touches: touches, scene: scene, nodeName: "right") {
                 self.delegate?.receiveMessage(with: "stop animating")
                 rightArrowTapped = false
                 leftArrowTapped = false
+              //  playSound(scene)
             }
-            playSound(scene)
         }
        
     }
@@ -103,7 +100,7 @@ extension Joistick: ButtonType {
                 rightArrowTapped = false
                 leftArrowTapped = false
             }
-            playSound(scene)
+           
         }
     }
 

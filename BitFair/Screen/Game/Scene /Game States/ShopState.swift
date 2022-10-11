@@ -22,7 +22,7 @@ class ShopState: GKState {
         guard let scene = gameSceneManager?.scene else {return}
         scene.addChild(shopOverlay)
         shopOverlay.apear()
-        
+        gameSceneManager?.toucheble.append(shopOverlay)
         gameSceneManager?.toucheble.append(shopOverlay.frameNode)
     }
     

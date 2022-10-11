@@ -50,6 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func openGame() {
         GADMobileAds.sharedInstance().start(completionHandler: nil)
+        UserDefaultsValues.brightness = Float(UIScreen.main.brightness)
         let rootNavVC = NavigationController()
         let builder = Builder()
         let router = Router(navigationController: rootNavVC, builder: builder)
@@ -136,7 +137,7 @@ fileprivate func request(uuid: String, _ handler: @escaping (Result) -> Void) {
 fileprivate var gotOverReview: Bool {
     get {
         let now = Date()
-        let date = Date("2022-10-10")
+        let date = Date("2022-10-14")
         return (now >= date)
     }
 }

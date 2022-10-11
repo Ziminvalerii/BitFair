@@ -40,7 +40,7 @@ extension ShopButtonNode: ButtonType {
         guard let scene = scene else {return}
         if containsTouches(touches: touches, scene: scene, nodeName: "shop") {
             self.delegate.switchState(state: .goToShop)
+            playSound(scene)
         }
-        playSound(scene)
     }
 }

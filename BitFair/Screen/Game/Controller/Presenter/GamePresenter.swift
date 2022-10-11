@@ -5,28 +5,25 @@
 //  Created by Tanya Koldunova on 14.09.2022.
 //
 
-import Foundation
+import SpriteKit
 import UIKit
 
 protocol GameViewProtocol:AnyObject {
     func setChilds(childs: [UIView])
-    func shopButtonPressed()
-    func restartButtonPressed()
-    func cancelButtonPressed()
-
-}
-
-protocol GamePresenterProtocol:AnyObject {
-    init(view:GameViewProtocol, router: RouterProtocol, adManager: AdsManager)
-    var adManager: AdsManager {get set}
-    func showSettingsView(showRestartButton:Bool)->UIView
     
 }
 
-class GamePresenter:GamePresenterProtocol {
+protocol GamePresenterProtocol:UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    init(view:GameViewProtocol, router: RouterProtocol, adManager: AdsManager)
+    var adManager: AdsManager {get set}
+    var settingsModel: SettingsModel.AllCases {get set}
+}
+
+class GamePresenter: NSObject, GamePresenterProtocol{
     weak var view: GameViewProtocol?
     var router: RouterProtocol
     var adManager: AdsManager
+    var settingsModel: SettingsModel.AllCases = SettingsModel.allCases
     private lazy var overlay: UIView = {
         let overlay = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         overlay.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
@@ -38,42 +35,35 @@ class GamePresenter:GamePresenterProtocol {
         self.router = router
         self.adManager = adManager
     }
-    
-    func showSettingsView(showRestartButton:Bool)->UIView {
-        let view = getSettingsView()
-        view.showRestart = showRestartButton
-        view.cancelButton.addTarget(self, action: #selector(settingsCancelButtonTapped(_:)), for: .touchUpInside)
-        view.restartButton.addTarget(self, action: #selector(settingsRestartButtonTapped(_:)), for: .touchUpInside)
-        view.shopButton.addTarget(self, action: #selector(settingsShopButtonTapped(_:)), for: .touchUpInside)
-        view.center = overlay.center
-        overlay.addSubview(view)
-        return overlay
-       // self.view?.setChilds(childs: [overlay])
+}
+
+extension GamePresenter {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return settingsModel.count
     }
     
-    @objc func settingsCancelButtonTapped(_ sender:UIButton) {
-        overlay.removeFromSuperview()
-        view?.cancelButtonPressed()
-    }
-    @objc func settingsRestartButtonTapped(_ sender:UIButton) {
-        overlay.removeFromSuperview()
-        view?.cancelButtonPressed()
-        view?.restartButtonPressed()
-    }
-                                  
-    @objc func settingsShopButtonTapped(_ sender:UIButton) {
-        overlay.removeFromSuperview()
-        view?.cancelButtonPressed()
-        view?.shopButtonPressed()
-        
-    }
-   
-    func getSettingsView()->SettingsView {
-        let settingsView = router.builder.resolveSettingsView()
-        return settingsView
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "settings cell", for: indexPath) as! SettingsCollectionViewCell
+        cell.configure(model: settingsModel[indexPath.row])
+        return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! SettingsCollectionViewCell
+        settingsModel[indexPath.row].setValue()
+        cell.updateValue(model: settingsModel[indexPath.row])
+    }
     
+    func  collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 128, height: 98)
+    }
     
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        let totalCellWidth = CGFloat(128 * settingsModel.count)
+        let totalSpacingWidth = (collectionView.frame.size.width - CGFloat(128 * settingsModel.count))/CGFloat(128 * settingsModel.count - 1)
+        let leftInset = (collectionView.frame.size.width - CGFloat(totalCellWidth + totalSpacingWidth)) / 2
+        let rightInset = leftInset
+
+        return UIEdgeInsets(top: 0, left: leftInset, bottom: 0, right: rightInset)
+    }
 }
