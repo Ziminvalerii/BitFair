@@ -199,7 +199,7 @@ extension BackgroundNode: Updatable {
                 }
                 self.addChild(backGround)
                 self.addChild(ground)
-                finishNode.position = CGPoint(x: scene.size.width*CGFloat(backGroundCount) - finishNode.size.width - 32, y: 50 + finishNode.size.height)
+                finishNode.position = CGPoint(x: scene.size.width*CGFloat(backGroundCount) - finishNode.size.width - 32, y: 95 + finishNode.size.height/2)
                 if (finishNode.position.x >= currentCusrsor) && (finishNode.position.x < currentCusrsor + sceneSize.width) {
                     self.addChild(finishNode)
                 }

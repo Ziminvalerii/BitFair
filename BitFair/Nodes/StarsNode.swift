@@ -21,6 +21,9 @@ class StarsNode:SKSpriteNode {
     }
     var gettedStars: Int = 0 {
         didSet {
+            if gettedStars > 3 {
+                gettedStars = 3
+            }
             for i in 0..<gettedStars {
                 stars[i].texture = activeTexture
             }

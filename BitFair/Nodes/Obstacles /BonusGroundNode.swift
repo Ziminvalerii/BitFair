@@ -15,15 +15,30 @@ class BonusGroundNode: SKSpriteNode {
     
     convenience init(bonusCount: Int) {
         self.init(color: .clear, size: CGSize(width: NodesSize.bonusGround.size.width * CGFloat(bonusCount), height: 40))
+//        for i in 0 ..< bonusCount {
+//            let bonusGround = createBonusGround()
+//            let xPos = (self.size.width/2 - bonusGround.size.width/2)
+//            bonusGround.position = CGPoint(x: xPos*CGFloat(-1+i), y: 0)
+//            bonusGround.name = "bonusNode-\(i)"
+//            bonusGrounds.append(bonusGround)
+//            self.addChild(bonusGround)
+//        }
+        spawnGround(bonusCount: bonusCount)
+        
+    }
+    
+    func spawnGround(bonusCount: Int) {
+        let spacebetween: CGFloat = (self.size.width - (50 * CGFloat(bonusCount)))/(CGFloat(bonusCount)+1)
+        var xPos:CGFloat = -self.size.width/2 + 50/2 + spacebetween
+        var yPos :CGFloat = -225
         for i in 0 ..< bonusCount {
             let bonusGround = createBonusGround()
-            let xPos = (self.size.width/2 - bonusGround.size.width/2)
-            bonusGround.position = CGPoint(x: xPos*CGFloat(-1+i), y: 0)
             bonusGround.name = "bonusNode-\(i)"
+            bonusGround.position =  CGPoint(x: xPos, y: 0)
+            xPos += bonusGround.size.width + spacebetween
             bonusGrounds.append(bonusGround)
             self.addChild(bonusGround)
         }
-        
     }
     
     private func createBonusGround() -> SKSpriteNode {

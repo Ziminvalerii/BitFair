@@ -31,6 +31,8 @@ class PlayingState: GKState {
             healthNode.hp = character.hp
             return
         }
+        gameSceneManager.cointsCount = 0 
+        gameSceneManager.touchedOnce = false
         playerNode = UserDefaultsValues.playingCharacter.node
         backgroundNode = BackgroundNode(at: scene.size, level: gameSceneManager.levelManager)
         scene.addChild(backgroundNode)

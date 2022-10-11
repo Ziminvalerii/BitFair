@@ -36,7 +36,6 @@ extension GameSceneManager : SKPhysicsContactDelegate {
     
     private func handleContactBtwPlayerCoins(_ contact: SKPhysicsContact) {
         let playCointsSound = SKAction.playSoundFileNamed("getCoinsSound.wav", waitForCompletion: false)
-        if Date().timeIntervalSince1970 - contactInterval > 0.15 {
             if contact.bodyA.categoryBitMask == PhysicsBitMask.coint.bitMask {
                 contact.bodyA.node?.removeFromParent()
                 cointsCount += 1
@@ -47,8 +46,6 @@ extension GameSceneManager : SKPhysicsContactDelegate {
             if !UserDefaultsValues.soundOff {
                 self.scene?.run(playCointsSound)
             }
-            contactInterval = Date().timeIntervalSince1970
-        }
     }
     
     private func handleContactBtwPlayerEnemy(_ contact: SKPhysicsContact) {
@@ -62,7 +59,6 @@ extension GameSceneManager : SKPhysicsContactDelegate {
             enemy = contact.bodyB.node
         }
         if let enemy = enemy as? EnemyProtocol, let player = player as? CharacterProtocol {
-            if Date().timeIntervalSince1970 - contactInterval > 1 {
                 let painAction = SKAction.playSoundFileNamed("painSound.mp3", waitForCompletion: false)
                 if !UserDefaultsValues.soundOff {
                     self.scene?.run(painAction)
@@ -71,8 +67,6 @@ extension GameSceneManager : SKPhysicsContactDelegate {
                 hpDelegate?.receiveMessage(with: 1)
                 contactInterval = Date().timeIntervalSince1970
             }
-        }
-        
     }
     
     private func handleContactBtwEnemyHeadPlayer(_ contact: SKPhysicsContact) {
@@ -87,7 +81,6 @@ extension GameSceneManager : SKPhysicsContactDelegate {
         }
         
         if let enemy = enemyHead?.parent as? EnemyProtocol {
-            if Date().timeIntervalSince1970 - contactInterval > 1 {
                 let hitAction = SKAction.playSoundFileNamed("hitSound.wav", waitForCompletion: false)
                 if !UserDefaultsValues.soundOff {
                     self.scene?.run(hitAction)
@@ -106,8 +99,6 @@ extension GameSceneManager : SKPhysicsContactDelegate {
                 case .some(.no):
                     return
                 }
-                contactInterval = Date().timeIntervalSince1970
-            }
         }
         
     }
@@ -119,7 +110,6 @@ extension GameSceneManager : SKPhysicsContactDelegate {
         }
         var enemy: SKNode?
         var weapon: SKNode?
-        if Date().timeIntervalSince1970 - contactInterval > 1 {
         if contact.bodyA.categoryBitMask == PhysicsBitMask.enemy.bitMask {
             enemy = contact.bodyA.node
             weapon = contact.bodyB.node
@@ -132,8 +122,6 @@ extension GameSceneManager : SKPhysicsContactDelegate {
             if enemy.hp <= 0 {
                 enemy.removeFromParent()
             }
-        }
-            contactInterval = Date().timeIntervalSince1970
         }
         weapon?.removeFromParent()
     }
@@ -176,7 +164,6 @@ extension GameSceneManager : SKPhysicsContactDelegate {
         }
         var player: SKNode?
         var weapon: SKNode?
-        if Date().timeIntervalSince1970 - contactInterval > 1 {
         if contact.bodyA.categoryBitMask == PhysicsBitMask.player.bitMask {
             player = contact.bodyA.node
             weapon = contact.bodyB.node
@@ -188,8 +175,6 @@ extension GameSceneManager : SKPhysicsContactDelegate {
             player.setUpHit()
             hpDelegate?.receiveMessage(with: weapon.damage)
             weapon.removeFromParent()
-        }
-            contactInterval = Date().timeIntervalSince1970
         }
     }
     
@@ -218,7 +203,6 @@ extension GameSceneManager : SKPhysicsContactDelegate {
     private func handleContactBtwPlayerStars(_ contact: SKPhysicsContact) {
         guard let scene = scene else {return}
         let starCollectAction = SKAction.playSoundFileNamed("starCollect.mp3", waitForCompletion: false)
-        if Date().timeIntervalSince1970 - contactInterval > 0.15 {
             if !UserDefaultsValues.soundOff {
                 self.scene?.run(starCollectAction)
             }
@@ -230,8 +214,6 @@ extension GameSceneManager : SKPhysicsContactDelegate {
                 starsCount += 1
             }
             starsDelegate?.receiveMessage(with: 1)
-            contactInterval = Date().timeIntervalSince1970
-        }
     }
     
     private func handleContactBtwWeaponGround(_ contact: SKPhysicsContact) {

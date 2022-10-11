@@ -93,7 +93,8 @@ extension GameScene: Dependable {
             })
         } else if state == GameStates.rescurentWithCoints {
             self.stateMachine.enter(RescurentState.self)
-            self.gameManager.cointsCount -= 100
+            UserDefaultsValues.cointsCount -= 100
+            self.stateMachine.enter(PlayingState.self)
         } else if state == GameStates.goToInstruction {
             self.stateMachine.enter(InstructionState.self)
         } else if state == GameStates.goToMap {
